@@ -104,16 +104,40 @@
 					<section class="docs-section" id="item-1-2">
 						<h2 class="section-heading">Modules</h2>
 						<h5>At this moment we support these modules:</h5>
-						<p>
-							<ul>
-								<li><strong class="mr-1">Pages (page elements, galleries, subpages)</strong></li>
-								<li><strong class="mr-1">Blog (posts, comments)</strong></li>
-								<li><strong class="mr-1">Shop (products, categories, comments, orders, stock)</strong></li>
-								<li><strong class="mr-1">Places (maps, locations)</strong></li>
-								<li><strong class="mr-1">Galleries</strong></li>
-								<li><strong class="mr-1">Images and Files</strong></li>
-							</ul>
-						</p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+								    <tr>
+									    <th class="theme-bg-light" width="50%">Pages</th>
+									    <td width="50%">(pages, page elements, galleries, subpages)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">Blog</th>
+									    <td width="50%">(posts, categories, comments)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">Shop</th>
+									    <td width="50%">(products, categories, comments, orders, stock)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">Galleries</th>
+									    <td width="50%">---</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">Images and Files</th>
+									    <td width="50%">---</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">Locations and Maps</th>
+									    <td width="50%">(places)</td>
+									</tr>
+									tr>
+									    <th class="theme-bg-light" width="50%">Leads</th>
+									    <td width="50%">(subscribers)</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 						<p>Once you have your administration panel up, you can easily put all of those elements wherever you want in your application files.</p>
 					</section><!--//section-->
 			    </article>
@@ -316,7 +340,7 @@
 						<pre><code class="php7 hljs"><span>Cms::shop()->comments()->create([<br>    'product_id', (int)<br>    'name', (string)<br>    'email', (string)<br>    'message', (text)<br>    'approved', (int) (default 0)<br>]);</span></code></pre>
 					</section><!--//section-->
 
-					<section class="docs-section" id="item-5-4">
+					<section class="docs-section" id="item-5-5">
 						<h2 class="section-heading">Orders</h2>
 						<p><code>Cms::shop()->orders()</code> will return you <b>Query Builder</b>, without brackets orders will return <b>Collection</b>.</p>
 						<p><b>Place order example:</b></p>

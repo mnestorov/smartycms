@@ -135,11 +135,11 @@
 						<p>In Laravel 5.5+, with Package Auto Discovery it should all be set automatically. For < 5.5, follow these instructions after composer finishes package installation:</p>
 						<p>Add the service provider to the <code>'providers'</code> array in <code>config/app.php</code> for Laravel 5.4 and lower.</p>
 						
-						<pre><code class="php7 hljs">SmartyStudio\SmartyCms\AdminServiceProvider::class,</code></pre>
+						<pre><code class="plaintext hljs">SmartyStudio\SmartyCms\AdminServiceProvider::class,</code></pre>
 						
 						<p>If you want to use this package as a facade, add this line to the <code>$aliases</code> array in <code>config/app.php</code>.</p>
 						
-						<pre><code class="php7 hljs">'Cms' => SmartyStudio\SmartyCms\Facades\Cms::class,</code></pre>
+						<pre><code class="plaintext hljs">'Cms' => SmartyStudio\SmartyCms\Facades\Cms::class,</code></pre>
 						
 						<p><b>Start package installation by running install command below:</b></p>
 						
@@ -172,7 +172,8 @@
 					<section class="docs-section" id="item-2-2">
 						<h2 class="section-heading">Publish Assets</h2>
 						<p>Now, when your package's users execute the <code>vendor:publish</code> command, your assets will be copied to the specified publish location. Since you will typically need to overwrite the assets every time the package is updated, you may use the <code>--force</code> flag:</p>
-						<pre><code class="plaintext hljs">$ php artisan vendor:publish --tag=public --force</code></p>
+						
+						<pre><code class="plaintext hljs"><span class="hljs-string">$ php artisan vendor:publish --tag=public --force</span></code></p>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-2-3">

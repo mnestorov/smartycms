@@ -64,8 +64,8 @@
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-4"><span class="theme-icon-holder mr-2"><i class="fas fa-book-reader"></i></span>Blog</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">Blog Instance</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-2">Posts</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-3">Comments</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-4">Categories</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-3">Categories</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-4">Comments</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-5"><span class="theme-icon-holder mr-2"><i class="fas fa-shopping-cart"></i></span>Shop</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-1">Shop Instance</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-2">Products</a></li>
@@ -201,53 +201,87 @@
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Page</h1>
 					    <section class="docs-intro">
-						    <p>You could access SmartyCMS Page instance with <code>Cms::page()</code>.</p>
+						    <p></p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-3-1">
-						<h2 class="section-heading">Section Item 3.1</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Page Instance</h2>
+						<p>You could access SmartyCMS Page instance with <code>Cms::page()</code>.</p>
+
+						<pre><code class="php7 hljs"><span>Cms::page();           /* this will return you appropriate Query Builder */</span><br><span>Cms::page($page);      /* this will return the Page Model, where `$page` can be page ID or page slug. */</span></code></pre>
+
+						<pre><code class="php7 hljs"><span>Cms::page()->menu();   /* generate nested menu from `Pages` */</span></code></pre>
+						
+						<p>This will generate your HTML.</p>
+
+						<p><b>You can style your menu like this:</b></p>
+						
+						<pre><code class="css hljs"><span>.nav-list { <br>   li > ul { <br>      padding-left: 20px; <br>      padding-right: 20px; <br>   } <br>}</span></code></pre>
+						<pre><code class="php hljs"><span>Cms::page()->tree();  /* generates menu array from `Pages` */</span></code></pre>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-3-2">
-						<h2 class="section-heading">Section Item 3.2</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Elements</h2>
+						
+						<pre><code class="php7 hljs"><span>Cms::page($page)->elements();    /* returns you all page elements as relationship `hasMany`. */</span><br><span>Cms::element($element_key);      /* returns PageElement Model */</span><br><span>echo Cms::element($element_key); /* returns content of the element, like Cms::element($element_key)->content */</span></code></pre>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-3-3">
-						<h2 class="section-heading">Section Item 3.3</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">SEO Meta</h2>
+						<h3>Implementation</h3>
+						<p><code>getMeta()</code> returns array of meta keys and it can be sent directly to blade template. Use <code>$title</code>, <code>$description</code> and <code>$keywords</code> variables in your blade layouts.</p>
+
+						<pre><code class="php7 hljs"><span>return view('about', CMS::page('about')->getMeta());</span></code></pre>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
 			    <article class="docs-article" id="section-4">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Intergrations</h1>
-					    <section class="docs-intro">
-						    <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+						<h1 class="docs-heading">Blog</h1>
+						<section class="docs-intro">
+						    <p></p>
+						</section><!--//docs-intro-->
+					    <section class="docs-section" id="item-4-1">
+							<h2 class="section-heading">Blog Instance</h2>
+							<p>You could access SmartyCMS Blog instance with <code>Cms::blog()</code>.</p>
+							<p>i.e. <code>Cms::blog()->posts()</code> or <code>Cms::blog()->categories()</code> or <code>Cms::blog()->comments()</code> we will return you appropriate <b>Query Builder</b>.</p>
+							<p>You could call a method to get <b>Query Builder</b>, or you could call a property to get a <b>Collection</b>.</p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-4-1">
-						<h2 class="section-heading">Section Item 4.1</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
-					</section><!--//section-->
-					
-					<section class="docs-section" id="item-4-2">
-						<h2 class="section-heading">Section Item 4.2</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+				     <section class="docs-section" id="item-4-2">
+						<h2 class="section-heading">Posts</h2>
+						<p><code>Cms::blog()->posts()</code> you get <b>Query Builder</b> so you have a basic idea how it works.</p>
+						<p><b>In case you want to create a Post outside our admin panel, these are available columns:</b></p>
+						
+						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->create([<br>    'blog_category_id', (int default(null))<br>    'uri_id', (string)<br>    'title', (string)<br>    'thumb', (string)<br>    'content', (string)<br>    'excerpt', (string)<br>    'visible', (int default(0))<br>    'meta_title', (string)<br>    'meta_description', (text)<br>    'meta_description', (text)<br>    'meta_keywords', (string)<br>]);</span></code></pre>
+						
+						<p><b>Get all comments for single post:</b></p>
+						<p><code>Cms::blog()->posts()->find($post_id)->comments</code> return you a relationship <b>hasMany</b> or <code>Cms::blog()->posts('my-first-blog')->comments</code></p>
+
+						<p><b>Get Category for single post:</b></p>
+						<p><code>Cms::blog()->posts()->find($post_id)->categories</code> return you a relationship <b>belongsTo</b> or <code>Cms::blog()->posts('my-first-blog')->categories</code></p>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-4-3">
-						<h2 class="section-heading">Section Item 4.3</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Categories</h2>
+						<pre><code class="php hljs">Cms::blog()->categories() /* you get a Query Builder */<br>Cms::blog()->posts()      /* same as above */</code>
+					</section><!--//section-->
+					
+					<section class="docs-section" id="item-4-4">
+						<h2 class="section-heading">Comments</h2>
+						<pre><code class="php hljs"><span>Cms::blog()->comments() /* you get a Query Builder */<br>Cms::blog()->posts()    /* same as above */</span></code></pre>
+						<p><b>Get post for single comment:</b></p>
+						<pre><code class="php hljs">Cms::blog()->comments()->find($comment_id)->post /* return you a relationship belongsTo */</code></pre>
+						<p><b>Write comment to post:</b></p>
+						<p><pre><code class="php7 hljs"><span>Cms::blog()->posts('my-first-blog')->comments()->create([<br>    'name', (string)<br>    'email', (string)<br>    'content', (text)<br>    'approved', (int) (default 0)<br>});</span></code></pre></p>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
 			    <article class="docs-article" id="section-5">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Utilities</h1>
+					    <h1 class="docs-heading">Shop</h1>
 					    <section class="docs-intro">
-						    <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+						    <p></p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-5-1">
@@ -269,14 +303,28 @@
 			    
 		        <article class="docs-article" id="section-6">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Web</h1>
+					    <h1 class="docs-heading">Galleries</h1>
 					    <section class="docs-intro">
-						    <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+						    <p></p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-6-1">
-						<h2 class="section-heading">Section Item 6.1</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Gallery Instance</h2>
+						<p>With SmartyCMS you could easily manipulate with Galleries.</p>
+						<p><b>To reach all gallery types:</b></p>
+						<pre><code class="php hljs">Cms::gallery()->get()</code></pre>
+
+						<p><b>Get single gallery:</b></p>
+						<pre><code class="php hljs">Cms::gallery($gallery_key)</code></pre>
+
+						<p><b>Available methods:</b></p>
+						<p><code>images()</code> - return collection of images</p>
+
+						<p><code>url()</code> - all our images and files are stored in <b>storage/app</b> path so we need to generate URL from <b>storage_key</b>.</p>
+						<p>Only tested with the local file system (Storage) so feel free to send a review for s3 or any other driver.</p>
+
+						<p><b>Example:</b></p>
+						<pre><code class="php hljs"><span>foreach(Cms::gallery('foo')->images as $image) {<br>    echo '&lt;img src="$image->url"&gt;';<br>}</span></code></pre>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-6-2">

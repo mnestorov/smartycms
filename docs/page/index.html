@@ -58,27 +58,26 @@
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-2">Publish Assets</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-3">Compiling Assets (Mix)</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-3"><span class="theme-icon-holder mr-2"><i class="fas fa-laptop-code"></i></span>Page</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">Page Instance</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">Instance</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-2">Elements</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-3">SEO Meta</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-4"><span class="theme-icon-holder mr-2"><i class="fas fa-book-reader"></i></span>Blog</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">Blog Instance</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">Instance</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-2">Posts</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-3">Categories</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-4">Comments</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-5"><span class="theme-icon-holder mr-2"><i class="fas fa-shopping-cart"></i></span>Shop</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-1">Shop Instance</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-1">Instance</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-2">Products</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-5-3">Categories</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-5-4">Comments</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-5-5">Orders</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-6"><span class="theme-icon-holder mr-2"><i class="fas fa-box fa-fw"></i></span>Galleries</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-6-1">Galleries Instance</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-6-1">Instance</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-7"><span class="theme-icon-holder mr-2"><i class="fas fa-file-image"></i></span>Images and Files</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-7-1">Images and Files Instances</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-7-2">Note</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-7-1">Instances</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-8"><span class="theme-icon-holder mr-2"><i class="fas fa-map-marked-alt"></i></span>Locations and Maps</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-1">Locations and Maps Instances</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-1">Instances</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-2">Locations</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-3">Map</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-9"><span class="theme-icon-holder mr-2"><i class="fas fa-bullhorn"></i></span>Leads</a></li>
@@ -89,7 +88,7 @@
 		    <div class="container">
 			    <article class="docs-article" id="section-1">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2019-06-01</span></h1>
+					    <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2020-09-12</span></h1>
 					    <section class="docs-intro">
 						    <p>SmartyCMS is a Laravel admin panel CRUD (create, read, update and delete) package that can help you get your administration panel in minutes.</p>
 						</section><!--//docs-intro-->
@@ -205,7 +204,7 @@
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-3-1">
-						<h2 class="section-heading">Page Instance</h2>
+						<h2 class="section-heading">Instance</h2>
 						<p>You could access SmartyCMS Page instance with <code>Cms::page()</code>.</p>
 
 						<pre><code class="php7 hljs"><span>Cms::page();           /* this will return you appropriate Query Builder */</span><br><span>Cms::page($page);      /* this will return the Page Model, where `$page` can be page ID or page slug. */</span></code></pre>
@@ -242,7 +241,7 @@
 						    <p></p>
 						</section><!--//docs-intro-->
 					    <section class="docs-section" id="item-4-1">
-							<h2 class="section-heading">Blog Instance</h2>
+							<h2 class="section-heading">Instance</h2>
 							<p>You could access SmartyCMS Blog instance with <code>Cms::blog()</code>.</p>
 							<p>i.e. <code>Cms::blog()->posts()</code> or <code>Cms::blog()->categories()</code> or <code>Cms::blog()->comments()</code> we will return you appropriate <b>Query Builder</b>.</p>
 							<p>You could call a method to get <b>Query Builder</b>, or you could call a property to get a <b>Collection</b>.</p>
@@ -264,14 +263,14 @@
 					
 					<section class="docs-section" id="item-4-3">
 						<h2 class="section-heading">Categories</h2>
-						<pre><code class="php hljs">Cms::blog()->categories() /* you get a Query Builder */<br>Cms::blog()->posts()      /* same as above */</code>
+						<pre><code class="php7 hljs">Cms::blog()->categories() /* you get a Query Builder */<br>Cms::blog()->posts()      /* same as above */</code>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-4-4">
 						<h2 class="section-heading">Comments</h2>
-						<pre><code class="php hljs"><span>Cms::blog()->comments() /* you get a Query Builder */<br>Cms::blog()->posts()    /* same as above */</span></code></pre>
+						<pre><code class="php7 hljs"><span>Cms::blog()->comments() /* you get a Query Builder */<br>Cms::blog()->posts()    /* same as above */</span></code></pre>
 						<p><b>Get post for single comment:</b></p>
-						<pre><code class="php hljs">Cms::blog()->comments()->find($comment_id)->post /* return you a relationship belongsTo */</code></pre>
+						<pre><code class="php7 hljs">Cms::blog()->comments()->find($comment_id)->post /* return you a relationship belongsTo */</code></pre>
 						<p><b>Write comment to post:</b></p>
 						<p><pre><code class="php7 hljs"><span>Cms::blog()->posts('my-first-blog')->comments()->create([<br>    'name', (string)<br>    'email', (string)<br>    'content', (text)<br>    'approved', (int) (default 0)<br>});</span></code></pre></p>
 					</section><!--//section-->
@@ -285,18 +284,167 @@
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-5-1">
-						<h2 class="section-heading">Section Item 5.1</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Instance</h2>
+						<p>You can access SmartyCMS Shop instance with <code>Cms::shop()</code>.</p>
+						<p><code>Cms::shop()->products()</code> or <code>Cms::shop()->categories()</code> or <code>Cms::shop()->comments()</code> or <code>Cms::shop()->orders()</code> we will return you appropriate <b>Query Builder</b>.</p>
+						<p>You can call a method to get <b>Query Builder</b>, or you can call a property to get a <b>Collection</b>.</p>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-5-2">
-						<h2 class="section-heading">Section Item 5.2</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Products</h2>
+						<p><code>Cms::shop()->products()</code> will return you <b>Query Builder</b>, without brackets products will return <b>Collection</b>.</p>
+						<p>For single product <code>Cms::shop()->products()->find($product_id)</code> we are providing you with a few methods.</p>
+						<p>Every product <b>belongsTo</b> single category on <code>category()</code> method.</p>
+						<p>Every product has <b>Gallery</b> which <b>belongsTo</b> on method gallery().</p>
+						<p>Every product has multiple comments on relationship <b>hasMany</b> on <code>comments()</code> method.</p>
+						<p>Every product has multiple similar products on <code>similar()</code> method.</p>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-5-3">
-							<h2 class="section-heading">Section Item 5.3</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+							<h2 class="section-heading">Product categories</h2>
+							<p><code>Cms::shop()->categories()</code> will return you <b>Query Builder</b>, without brackets categories will return <b>Collection</b>.</p>
+							<p>Single product categories have <b>hasMany</b> relationships on method <code>products()</code>.</p>
+							<pre><code class="php7 hljs">Cms::shop()->categories()->find($category_id)->products()</code></pre>
+						</section><!--//section-->
+
+					<section class="docs-section" id="item-5-4">
+						<h2 class="section-heading">Product comments</h2>
+						<p><code>Cms::shop()->comments()</code> will return you <b>Query Builder</b>, without brackets comments will return <b>Collection</b>.</p>
+						<p>Single comments have <b>belongsTo</b> relationship on method <code>product()</code>.</p>
+						<pre><code class="php7 hljs">Cms::shop()->comments()->find($category_id)->product()</code></pre>
+						<p><b>Add comment on product:</b></p>
+						<pre><code class="php7 hljs"><span>Cms::shop()->comments()->create([<br>    'product_id', (int)<br>    'name', (string)<br>    'email', (string)<br>    'message', (text)<br>    'approved', (int) (default 0)<br>]);</span></code></pre>
+					</section><!--//section-->
+
+					<section class="docs-section" id="item-5-4">
+						<h2 class="section-heading">Orders</h2>
+						<p><code>Cms::shop()->orders()</code> will return you <b>Query Builder</b>, without brackets orders will return <b>Collection</b>.</p>
+						<p><b>Place order example:</b></p>
+						<pre><code class="php7 hljs"><span>Cms::shop()->orders()->create([<br>    'billing_name'=> 'John Doe',<br>    'billing_email' => 'johndoe@example.com',<br>    'billing_address' => 'Some street 12',<br>    'billing_city' => 'Sofia',<br>    'billing_country' => 'Bulgaria',<br>    'total_price' => 100,<br>    'shipment_price' => 100,<br>    'valid_until' => 2020-31-8,<br>    'invoice_number' => 123456,<br>]);</span></code></pre>
+						<p><b>Avaible fields:</b></p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+								    <tr>
+									    <th class="theme-bg-light" width="50%">invoice_number</th>
+									    <td width="50%">(int)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">order_status_id</th>
+									    <td width="50%">(int)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipment_price</th>
+									    <td width="50%">(int)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">total_price</th>
+									    <td width="50%">(int)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">valid_until</th>
+									    <td width="50%">(data)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">date_of_purchase</th>
+									    <td width="50%">(data)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">currency</th>
+									    <td width="50%">(enum)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">note</th>
+									    <td width="50%">(text)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">billing_name</th>
+									    <td>(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">billing_email</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">billing_telephone</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">billing_address</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">billing_city</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">billing_country</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">billing_postcode</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">billing_contact_person</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipping_name</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipping_email</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipping_telephone</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipping_address</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipping_city</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipping_country</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipping_postcode</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">shipping_contact_person</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">parity</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">term_of_payment</th>
+									    <td width="50%">(string)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">footnote</th>
+									    <td width="50%">(text)</td>
+									</tr>
+									<tr>
+									    <th class="theme-bg-light" width="50%">show_shipping_address</th>
+									    <td width="50%">(int)</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p><b>Example:</b></p>
+						<pre><code><span>/* Add item to order */<br>Cms::shop()->orders()->find($order_id)->items()->create([<br>    'order_id', (int)<br>    'product_id', (int)<br>    'quantity', (int)<br>    'discount', (int)<br>    'custom_price' (int)<br>]);</span></code></pre>
+						<p><b>Available methods:</b></p>
+						<p><code>status()</code> - return order status</p>
+						<p><code>items()</code> - return order items</p>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
@@ -309,13 +457,13 @@
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-6-1">
-						<h2 class="section-heading">Gallery Instance</h2>
+						<h2 class="section-heading">Instances</h2>
 						<p>With SmartyCMS you could easily manipulate with Galleries.</p>
 						<p><b>To reach all gallery types:</b></p>
-						<pre><code class="php hljs">Cms::gallery()->get()</code></pre>
+						<pre><code class="php7 hljs">Cms::gallery()->get()</code></pre>
 
 						<p><b>Get single gallery:</b></p>
-						<pre><code class="php hljs">Cms::gallery($gallery_key)</code></pre>
+						<pre><code class="php7 hljs">Cms::gallery($gallery_key)</code></pre>
 
 						<p><b>Available methods:</b></p>
 						<p><code>images()</code> - return collection of images</p>
@@ -324,122 +472,109 @@
 						<p>Only tested with the local file system (Storage) so feel free to send a review for s3 or any other driver.</p>
 
 						<p><b>Example:</b></p>
-						<pre><code class="php hljs"><span>foreach(Cms::gallery('foo')->images as $image) {<br>    echo '&lt;img src="$image->url"&gt;';<br>}</span></code></pre>
-					</section><!--//section-->
-					
-					<section class="docs-section" id="item-6-2">
-						<h2 class="section-heading">Section Item 6.2</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
-					</section><!--//section-->
-					
-					<section class="docs-section" id="item-6-3">
-							<h2 class="section-heading">Section Item 6.3</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<pre><code class="php7 hljs"><span>foreach(Cms::gallery('foo')->images as $image) {<br>    echo '&lt;img src="$image->url"&gt;';<br>}</span></code></pre>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
 			    
 			    <article class="docs-article" id="section-7">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Mobile</h1>
-					    <section class="docs-intro">
-						    <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+					    <h1 class="docs-heading">Images and Files</h1>
+					    <section class="docs-intro"></p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-7-1">
-						<h2 class="section-heading">Section Item 7.1</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
-					</section><!--//section-->
-					
-					<section class="docs-section" id="item-7-2">
-						<h2 class="section-heading">Section Item 7.2</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
-					</section><!--//section-->
-					
-					<section class="docs-section" id="item-7-3">
-							<h2 class="section-heading">Section Item 7.3</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Instances</h2>
+						<p>With SmartyCMS you could manipulate with images and files.</p>
+						<p>All our files are stored at <b>storage/app</b> and saved in our database by <b>storage_key</b> so we need to provide you a URL to file. It is tested for Local storage, but feel free to send a review on another storage driver.</p>
+						<p><b>To generate link to a file use:</b></p>
+						<pre><code class="php7 hljs">Cms::getFile($file_name)</code></pre>
+
+						<p><b>To generate an progressive image with specific dimensions use:</b></p>
+						<pre><code class="php7 hljs">Cms::getImage($image, $width, $height)</code></pre>
+
+						<p>You can use only width or height to resize the image to given dimension, keeping the aspect ratio of the image. If both are given, image will be fitted in that canvas, also preserving the aspect ratio.</p>
+
+						<br>
+						<div class="callout-block callout-block-info">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder mr-1">
+		                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+		                            </span><!--//icon-holder-->
+	                                Note
+	                            </h4>
+                                <p>Some of our modules, like <b>Gallery</b>, have built in <code>url()</code> method that can return a URL of the image or a file. This is useful because we store storage key as a source.</p>
+                            </div><!--//content-->
+						</div>
+						<br>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
 			    
 			    <article class="docs-article" id="section-8">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Resources</h1>
+					    <h1 class="docs-heading">Locations and Maps</h1>
 					    <section class="docs-intro">
-						    <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+						    <p></p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-8-1">
-						<h2 class="section-heading">Section Item 8.1</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Instances</h2>
+						<p>An easy way to manipulate with Locations and Maps with our <b>Cms</b> facade.</p>
+						<p>Please set your Google API key in our <b>config/smartycms.php</b> in array <b>google_map_api</b> for our map</p>
+						<p>Possibility to add a custom marker, thumb image or image for every location.</p>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-8-2">
-						<h2 class="section-heading">Section Item 8.2</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Locations</h2>
+						<p><b>Get all locations:</b></p>
+						<pre><code class="php7 hljs">Cms::locations()</code></pre>
+
+						<p><b>Get single location:</b></p>
+						<pre><code class="php7 hljs">Cms::location($location_key)</code></pre>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="item-8-3">
-							<h2 class="section-heading">Section Item 8.3</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<h2 class="section-heading">Map</h2>
+						<p><b>Get all maps:</b></p>
+						<pre><code class="php7 hljs">Cms::maps()</code></pre>
+						
+						<p><b>Get single map:</b></p>
+						<pre><code class="php7 hljs">Cms::map($map_key)</code></pre>
+
+						<p><b>Get locations for map:</b></p>
+						<pre><code class="php7 hljs">Cms::map($map_key)->locations /* return hasMany relationship */</code></pre>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
 			    
 			    <article class="docs-article" id="section-9">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">FAQs</h1>
+					    <h1 class="docs-heading">Leads</h1>
 					    <section class="docs-intro">
-						    <p>Section intro goes here. You can list all your FAQs using the format below.</p>
+							<p>You could access SmartyCMS package Lead instance with <code>Cms::lead()</code>.</p>
+							<p>You could save multiple fields at once and manipulate with them. This opportunity is great for a contact page and we will serialize all your data.</p>
+							<p>Everything that we expect of you is an instance of <b>Illuminate\Http\Request</b></p>
+							<p>i.e. <code>$request->all()</code>.</p>
+							<p>If you provide us with <b>email</b> and <b>full_name</b> in the request we will send a welcome message to the user.</p>
+							<p>To set up custom message visit <b>leads/settings</b>.</p>
+							<p><b>To start using leads, place code, as you could see below, as post method in your controller:</b></p>
+							<pre><code class="php7 hljs">Cms::lead()->subscribe($request->all())</code></pre>
+							<p>Don't forget to use <b>Cms</b> in your controller.</p>
+							<p><b>In case that you want to unsubscribe specific user, use:</b></p>
+							<pre><code class="php7 hljs">Cms::lead()->unsubscribe($colunm, $value)</code></pre>
+							<p>i.e. <code>Cms::lead()->unsubscribe('email', 'johndoe@example.com')</code>.</p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-9-1">
-						<h2 class="section-heading">Section Item 9.1 <small>(FAQ Category One)</small></h2>
-						<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>What's sit amet quam eget lacinia?</h5>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-						<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>How to ipsum dolor sit amet quam tortor?</h5>
-						<p>Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. </p>
-						<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>Can I  bibendum sodales?</h5>
-						<p>Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. </p>
-						<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>Where arcu sed urna gravida?</h5>
-						<p>Aenean et sodales nisi, vel efficitur sapien. Quisque molestie diam libero, et elementum diam mollis ac. In dignissim aliquam est eget ullamcorper. Sed id sodales tortor, eu finibus leo. Vivamus dapibus sollicitudin justo vel fermentum. Curabitur nec arcu sed urna gravida lobortis. Donec lectus est, imperdiet eu viverra viverra, ultricies nec urna. </p>
-					</section><!--//section-->
-					
-					<section class="docs-section" id="item-9-2">
-						<h2 class="section-heading">Section Item 9.2 <small>(FAQ Category Two)</small></h2>
-						<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>What's sit amet quam eget lacinia?</h5>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-						<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>How to ipsum dolor sit amet quam tortor?</h5>
-						<p>Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. </p>
-						<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>Can I  bibendum sodales?</h5>
-						<p>Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. </p>
-						<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>Where arcu sed urna gravida?</h5>
-						<p>Aenean et sodales nisi, vel efficitur sapien. Quisque molestie diam libero, et elementum diam mollis ac. In dignissim aliquam est eget ullamcorper. Sed id sodales tortor, eu finibus leo. Vivamus dapibus sollicitudin justo vel fermentum. Curabitur nec arcu sed urna gravida lobortis. Donec lectus est, imperdiet eu viverra viverra, ultricies nec urna. </p>
-					</section><!--//section-->
-					
-					<section class="docs-section" id="item-9-3">
-							<h2 class="section-heading">Section Item 9.3 <small>(FAQ Category Three)</small></h2>
-						    <h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>How to dapibus sollicitudin justo vel fermentum?</h5>
-							<p>Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. </p>
-							<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>How long bibendum sodales?</h5>
-							<p>Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. </p>
-							<h5 class="pt-3"><i class="fas fa-question-circle mr-1"></i>Where dapibus sollicitudin?</h5>
-							<p>Aenean et sodales nisi, vel efficitur sapien. Quisque molestie diam libero, et elementum diam mollis ac. In dignissim aliquam est eget ullamcorper. Sed id sodales tortor, eu finibus leo. Vivamus dapibus sollicitudin justo vel fermentum. Curabitur nec arcu sed urna gravida lobortis. Donec lectus est, imperdiet eu viverra viverra, ultricies nec urna. </p>
-					</section><!--//section-->
 			    </article><!--//docs-article-->
 
 			    <footer class="footer">
 				    <div class="container text-center py-5">
-					    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-				        <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+					    <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
 				        <ul class="social-list list-unstyled pt-4 mb-0">
-						    <li class="list-inline-item"><a href="#"><i class="fab fa-github fa-fw"></i></a></li> 
-				            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
-				            <li class="list-inline-item"><a href="#"><i class="fab fa-slack fa-fw"></i></a></li>
-				            <li class="list-inline-item"><a href="#"><i class="fab fa-product-hunt fa-fw"></i></a></li>
+						    <li class="list-inline-item"><a href="https://github.com/smartystudio"><i class="fab fa-github fa-fw"></i></a></li> 
 				            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f fa-fw"></i></a></li>
-				            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-fw"></i></a></li>
 				        </ul><!--//social-list-->
 				    </div>
 			    </footer>

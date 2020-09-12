@@ -94,14 +94,14 @@
 						</section><!--//docs-intro-->
 					</header>
 					
-				    <section class="docs-section" id="item-1-1">
+				    <section class="docs-section" id="i1-1">
 						<h2 class="section-heading">About SmartyCMS</h2>
 						<p>SmartyCMS will provide you with a visual interface for the admin panel (the HTML, the CSS, the JS). It pulls in the
 						excellent UI theme, with our own design adds authentication functionality & bubble notifications. When you decide to build a custom feature for your admin
 						panel, you already have the HTML blocks for the UI, and it will look good</p>
 					</section><!--//section-->
 
-					<section class="docs-section" id="item-1-2">
+					<section class="docs-section" id="i1-2">
 						<h2 class="section-heading">Modules</h2>
 						<h5>At this moment we support these modules:</h5>
 						<div class="table-responsive my-4">
@@ -149,7 +149,7 @@
 						    <p>Detailed instructions on how to install SmartyCMS super fast.</p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-2-1">
+				     <section class="docs-section" id="i2-1">
 						<h2 class="section-heading">Install using Composer</h2>
 						
 						<pre><code class="plaintext hljs"><span class="hljs-string">$ composer require smartystudio/smartycms</span></code></pre>
@@ -191,14 +191,14 @@
 						install command. The same way you run your standard Laravel's migration command.</p>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-2-2">
+					<section class="docs-section" id="i2-2">
 						<h2 class="section-heading">Publish Assets</h2>
 						<p>Now, when your package's users execute the <code>vendor:publish</code> command, your assets will be copied to the specified publish location. Since you will typically need to overwrite the assets every time the package is updated, you may use the <code>--force</code> flag:</p>
 						
 						<pre><code class="plaintext hljs"><span class="hljs-string">$ php artisan vendor:publish --tag=public --force</span></code></p>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-2-3">
+					<section class="docs-section" id="i2-3">
 						<h2 class="section-heading">Compiling Assets (Mix)</h2>
 						<p>It's important if you make some changes on style files, to compile assets after you're done with all style changes.</p>
 						<h3>Install npm or yarn</h3>
@@ -227,7 +227,7 @@
 						    <p></p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-3-1">
+				     <section class="docs-section" id="i3-1">
 						<h2 class="section-heading">Instance</h2>
 						<p>You could access SmartyCMS Page instance with <code>Cms::page()</code>.</p>
 
@@ -243,13 +243,13 @@
 						<pre><code class="php hljs"><span>Cms::page()->tree();  /* generates menu array from `Pages` */</span></code></pre>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-3-2">
+					<section class="docs-section" id="i3-2">
 						<h2 class="section-heading">Elements</h2>
 						
 						<pre><code class="php7 hljs"><span>Cms::page($page)->elements();    /* returns you all page elements as relationship `hasMany`. */</span><br><span>Cms::element($element_key);      /* returns PageElement Model */</span><br><span>echo Cms::element($element_key); /* returns content of the element, like Cms::element($element_key)->content */</span></code></pre>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-3-3">
+					<section class="docs-section" id="i3-3">
 						<h2 class="section-heading">SEO Meta</h2>
 						<h3>Implementation</h3>
 						<p><code>getMeta()</code> returns array of meta keys and it can be sent directly to blade template. Use <code>$title</code>, <code>$description</code> and <code>$keywords</code> variables in your blade layouts.</p>
@@ -264,14 +264,14 @@
 						<section class="docs-intro">
 						    <p></p>
 						</section><!--//docs-intro-->
-					    <section class="docs-section" id="item-4-1">
+					    <section class="docs-section" id="i4-1">
 							<h2 class="section-heading">Instance</h2>
 							<p>You could access SmartyCMS Blog instance with <code>Cms::blog()</code>.</p>
 							<p>i.e. <code>Cms::blog()->posts()</code> or <code>Cms::blog()->categories()</code> or <code>Cms::blog()->comments()</code> we will return you appropriate <b>Query Builder</b>.</p>
 							<p>You could call a method to get <b>Query Builder</b>, or you could call a property to get a <b>Collection</b>.</p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-4-2">
+				     <section class="docs-section" id="i4-2">
 						<h2 class="section-heading">Posts</h2>
 						<p><code>Cms::blog()->posts()</code> you get <b>Query Builder</b> so you have a basic idea how it works.</p>
 						<p><b>In case you want to create a Post outside our admin panel, these are available columns:</b></p>
@@ -285,12 +285,12 @@
 						<p><code>Cms::blog()->posts()->find($post_id)->categories</code> return you a relationship <b>belongsTo</b> or <code>Cms::blog()->posts('my-first-blog')->categories</code></p>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-4-3">
+					<section class="docs-section" id="i4-3">
 						<h2 class="section-heading">Categories</h2>
 						<pre><code class="php7 hljs">Cms::blog()->categories() /* you get a Query Builder */<br>Cms::blog()->posts()      /* same as above */</code>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-4-4">
+					<section class="docs-section" id="i4-4">
 						<h2 class="section-heading">Comments</h2>
 						<pre><code class="php7 hljs"><span>Cms::blog()->comments() /* you get a Query Builder */<br>Cms::blog()->posts()    /* same as above */</span></code></pre>
 						<p><b>Get post for single comment:</b></p>
@@ -307,14 +307,14 @@
 						    <p></p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-5-1">
+				     <section class="docs-section" id="i5-1">
 						<h2 class="section-heading">Instance</h2>
 						<p>You can access SmartyCMS Shop instance with <code>Cms::shop()</code>.</p>
 						<p><code>Cms::shop()->products()</code> or <code>Cms::shop()->categories()</code> or <code>Cms::shop()->comments()</code> or <code>Cms::shop()->orders()</code> we will return you appropriate <b>Query Builder</b>.</p>
 						<p>You can call a method to get <b>Query Builder</b>, or you can call a property to get a <b>Collection</b>.</p>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-5-2">
+					<section class="docs-section" id="i5-2">
 						<h2 class="section-heading">Products</h2>
 						<p><code>Cms::shop()->products()</code> will return you <b>Query Builder</b>, without brackets products will return <b>Collection</b>.</p>
 						<p>For single product <code>Cms::shop()->products()->find($product_id)</code> we are providing you with a few methods.</p>
@@ -324,14 +324,14 @@
 						<p>Every product has multiple similar products on <code>similar()</code> method.</p>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-5-3">
+					<section class="docs-section" id="i5-3">
 							<h2 class="section-heading">Product categories</h2>
 							<p><code>Cms::shop()->categories()</code> will return you <b>Query Builder</b>, without brackets categories will return <b>Collection</b>.</p>
 							<p>Single product categories have <b>hasMany</b> relationships on method <code>products()</code>.</p>
 							<pre><code class="php7 hljs">Cms::shop()->categories()->find($category_id)->products()</code></pre>
 						</section><!--//section-->
 
-					<section class="docs-section" id="item-5-4">
+					<section class="docs-section" id="i5-4">
 						<h2 class="section-heading">Product comments</h2>
 						<p><code>Cms::shop()->comments()</code> will return you <b>Query Builder</b>, without brackets comments will return <b>Collection</b>.</p>
 						<p>Single comments have <b>belongsTo</b> relationship on method <code>product()</code>.</p>
@@ -340,7 +340,7 @@
 						<pre><code class="php7 hljs"><span>Cms::shop()->comments()->create([<br>    'product_id', (int)<br>    'name', (string)<br>    'email', (string)<br>    'message', (text)<br>    'approved', (int) (default 0)<br>]);</span></code></pre>
 					</section><!--//section-->
 
-					<section class="docs-section" id="item-5-5">
+					<section class="docs-section" id="i5-5">
 						<h2 class="section-heading">Orders</h2>
 						<p><code>Cms::shop()->orders()</code> will return you <b>Query Builder</b>, without brackets orders will return <b>Collection</b>.</p>
 						<p><b>Place order example:</b></p>
@@ -480,7 +480,7 @@
 						    <p></p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-6-1">
+				     <section class="docs-section" id="i6-1">
 						<h2 class="section-heading">Instances</h2>
 						<p>With SmartyCMS you could easily manipulate with Galleries.</p>
 						<p><b>To reach all gallery types:</b></p>
@@ -507,7 +507,7 @@
 					    <section class="docs-intro"></p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-7-1">
+				     <section class="docs-section" id="i7-1">
 						<h2 class="section-heading">Instances</h2>
 						<p>With SmartyCMS you could manipulate with images and files.</p>
 						<p>All our files are stored at <b>storage/app</b> and saved in our database by <b>storage_key</b> so we need to provide you a URL to file. It is tested for Local storage, but feel free to send a review on another storage driver.</p>
@@ -543,14 +543,14 @@
 						    <p></p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-8-1">
+				     <section class="docs-section" id="i8-1">
 						<h2 class="section-heading">Instances</h2>
 						<p>An easy way to manipulate with Locations and Maps with our <b>Cms</b> facade.</p>
 						<p>Please set your Google API key in our <b>config/smartycms.php</b> in array <b>google_map_api</b> for our map</p>
 						<p>Possibility to add a custom marker, thumb image or image for every location.</p>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-8-2">
+					<section class="docs-section" id="i8-2">
 						<h2 class="section-heading">Locations</h2>
 						<p><b>Get all locations:</b></p>
 						<pre><code class="php7 hljs">Cms::locations()</code></pre>
@@ -559,7 +559,7 @@
 						<pre><code class="php7 hljs">Cms::location($location_key)</code></pre>
 					</section><!--//section-->
 					
-					<section class="docs-section" id="item-8-3">
+					<section class="docs-section" id="i8-3">
 						<h2 class="section-heading">Map</h2>
 						<p><b>Get all maps:</b></p>
 						<pre><code class="php7 hljs">Cms::maps()</code></pre>

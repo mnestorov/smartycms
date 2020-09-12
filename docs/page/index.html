@@ -44,49 +44,49 @@
 	    <div id="docs-sidebar" class="docs-sidebar">
 		    <div class="top-search-box d-lg-none p-3">
                 <form class="search-form">
-		            <input type="text" onkeyup="myFunction()" placeholder="Search the docs..." name="search" id="jsSerach" class="form-control search-input">
+		            <input type="text" onkeyup="searchFunction()" placeholder="Search the docs..." name="search" id="jsSerach" class="form-control search-input">
 		            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
 		        </form>
             </div>
 		    <nav id="docs-nav" class="docs-nav navbar">
 			    <ul class="section-items list-unstyled nav flex-column pb-3" id="jsSearchUl">
-				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-1"><span class="theme-icon-holder mr-2"><i class="fas fa-map-signs"></i></span>Introduction</a></li>
+				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#s1"><span class="theme-icon-holder mr-2"><i class="fas fa-map-signs"></i></span>Introduction</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">About SmartyCMS</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Modules</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-2"><span class="theme-icon-holder mr-2"><i class="fas fa-arrow-down"></i></span>Installation</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#s2"><span class="theme-icon-holder mr-2"><i class="fas fa-arrow-down"></i></span>Installation</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Install using Composer</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-2">Publish Assets</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-3">Compiling Assets (Mix)</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-3"><span class="theme-icon-holder mr-2"><i class="fas fa-laptop-code"></i></span>Page</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#s3"><span class="theme-icon-holder mr-2"><i class="fas fa-laptop-code"></i></span>Page</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">Instance</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-2">Elements</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-3">SEO Meta</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-4"><span class="theme-icon-holder mr-2"><i class="fas fa-book-reader"></i></span>Blog</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#s4"><span class="theme-icon-holder mr-2"><i class="fas fa-book-reader"></i></span>Blog</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">Instance</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-2">Posts</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-3">Categories</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-4">Comments</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-5"><span class="theme-icon-holder mr-2"><i class="fas fa-shopping-cart"></i></span>Shop</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#5"><span class="theme-icon-holder mr-2"><i class="fas fa-shopping-cart"></i></span>Shop</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-1">Instance</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-2">Products</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-5-3">Categories</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-5-4">Comments</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-5-5">Orders</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-6"><span class="theme-icon-holder mr-2"><i class="fas fa-box fa-fw"></i></span>Galleries</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#6"><span class="theme-icon-holder mr-2"><i class="fas fa-box fa-fw"></i></span>Galleries</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-6-1">Instance</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-7"><span class="theme-icon-holder mr-2"><i class="fas fa-file-image"></i></span>Images and Files</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#7"><span class="theme-icon-holder mr-2"><i class="fas fa-file-image"></i></span>Images and Files</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-7-1">Instances</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-8"><span class="theme-icon-holder mr-2"><i class="fas fa-map-marked-alt"></i></span>Locations and Maps</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#8"><span class="theme-icon-holder mr-2"><i class="fas fa-map-marked-alt"></i></span>Locations and Maps</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-1">Instances</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-2">Locations</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-8-3">Map</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-9"><span class="theme-icon-holder mr-2"><i class="fas fa-bullhorn"></i></span>Leads</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#9"><span class="theme-icon-holder mr-2"><i class="fas fa-bullhorn"></i></span>Leads</a></li>
 			    </ul>
 		    </nav><!--//docs-nav-->
 	    </div><!--//docs-sidebar-->
 	    <div class="docs-content">
 		    <div class="container">
-			    <article class="docs-article" id="section-1">
+			    <article class="docs-article" id="s1">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2020-09-12</span></h1>
 					    <section class="docs-intro">
@@ -142,7 +142,7 @@
 					</section><!--//section-->
 			    </article>
 			    
-			    <article class="docs-article" id="section-2">
+			    <article class="docs-article" id="s2">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Installation</h1>
 					    <section class="docs-intro">
@@ -220,7 +220,7 @@
 			    </article><!--//docs-article-->
 			    
 			    
-			    <article class="docs-article" id="section-3">
+			    <article class="docs-article" id="s3">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Page</h1>
 					    <section class="docs-intro">
@@ -258,7 +258,7 @@
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
-			    <article class="docs-article" id="section-4">
+			    <article class="docs-article" id="s4">
 				    <header class="docs-header">
 						<h1 class="docs-heading">Blog</h1>
 						<section class="docs-intro">
@@ -300,7 +300,7 @@
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
-			    <article class="docs-article" id="section-5">
+			    <article class="docs-article" id="s5">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Shop</h1>
 					    <section class="docs-intro">
@@ -473,7 +473,7 @@
 			    </article><!--//docs-article-->
 			    
 			    
-		        <article class="docs-article" id="section-6">
+		        <article class="docs-article" id="s6">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Galleries</h1>
 					    <section class="docs-intro">
@@ -501,7 +501,7 @@
 			    </article><!--//docs-article-->
 			    
 			    
-			    <article class="docs-article" id="section-7">
+			    <article class="docs-article" id="s7">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Images and Files</h1>
 					    <section class="docs-intro"></p>
@@ -536,7 +536,7 @@
 			    </article><!--//docs-article-->
 			    
 			    
-			    <article class="docs-article" id="section-8">
+			    <article class="docs-article" id="s8">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Locations and Maps</h1>
 					    <section class="docs-intro">
@@ -573,7 +573,7 @@
 			    </article><!--//docs-article-->
 			    
 			    
-			    <article class="docs-article" id="section-9">
+			    <article class="docs-article" id="s9">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Leads</h1>
 					    <section class="docs-intro">
@@ -620,7 +620,7 @@
 	
 	<!-- Dynamic search -->
 	<script>
-		function myFunction() {
+		function searchFunction() {
 			// Declare variables
 			var input, filter, ul, li, a, i, txtValue;
 			input = document.getElementById('jsSearch');

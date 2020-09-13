@@ -300,8 +300,11 @@
 						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->find($post_id)->categories    /* return a relationship belongsTo */<br>Cms::blog()->posts('my-first-blog')->categories    /* same as above */</span></code></pre>
 
 						<p>And this is how to <b>retrieve post data</b> in your front view.</p>
+						<p><small><i>routes/web.php</i></small></p>
+						<pre><code class="php7 hljs"><span>Route::resource('/blog', 'BlogController');<br>Route::get('/blog/{blog}/{slug}', 'BlogController@show')->name('blog');</span></code></pre>
+
 						<p><small><i>resources/views/blog/index.blade.php</i></small></p>
-						<pre><code class="html hljs"><span>@foreach($posts as $post)<br>    {{ $post->title }}<br>    &lt;a href="{{ route('blog', [$post->id, $post->slug]) }}" class="text-right"&gt;READ MORE&lt;/a&gt;<br>@endforeach</span></code></pre>
+						<pre><code class="html hljs"><span>@foreach($posts as $post)<br>    {{ $post->title }}<br>    &lt;a href="{{ route('blog', [$post->id, $post->slug]) }}"&gt;Read more&lt;/a&gt;<br>@endforeach</span></code></pre>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="i4-3">

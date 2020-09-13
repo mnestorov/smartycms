@@ -275,30 +275,33 @@
 					    <section class="docs-section" id="i4-1">
 							<h2 class="section-heading">Model Instance</h2>
 							<p>You could access SmartyCMS Blog model instance with <code>Cms::blog()</code>.</p>
-							<p><b>Example:</b></p> 
-							<pre><code class="php7 hljs"><span>Cms::blog()->posts    /* we will return you appropriate Query Builder */<br>    Cms::blog()->categories /* we will return you appropriate Query Builder */<br>    Cms::blog()->comments  /* we will return you appropriate Query Builder */</code></pre> 
+							<pre><code class="php7 hljs"><span>Cms::blog()->posts    /* we will return you appropriate Query Builder */<br>Cms::blog()->categories /* same as above */<br>Cms::blog()->comments  /* same as above */</code></pre> 
 							<p>You could call a method to get <b>Query Builder</b>, or you could call a property to get a <b>Collection</b>.</p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="i4-2">
 						<h2 class="section-heading">Posts</h2>
 						<p><code>Cms::blog()->posts</code> you get a <b>Query Builder</b> so you have a basic idea how it works.</p>
-						<p><b>Example:</b></p>
-						<p><i>Let's assume you want to retrieve <b>all posts</b> from database in your front view and you have a <b>BlogController.php</b> file in your <b>app/Http/Controllers</b> folder and the first method is <b>index()</b>.</i></p>
+						<p><small><i>app/Http/Controllers/BlogController.php</i></small></p>
+						<p>Let's assume you want to retrieve <b>all posts</b> from database in your front view and you have a <b>BlogController.php</b> file in your <b>app/Http/Controllers</b> folder and the first method is <b>index()</b>.</p>
 						<pre><code><span>public function index()<br>{<br>    $posts = Cms::blog()->posts;<br>    return view('blog.index', compact('posts'));<br>}</span></code></pre>
 
-						<p><i>Let's assume you want to retrieve <b>single post</b> from database in your front view and you have a <b>BlogController.php</b> file in your <b>app/Http/Controllers</b> folder and there is a <b>show()</b> method.</i></p>
+						<p>Let's assume you want to retrieve <b>single post</b> from database in your front view and you have a <b>BlogController.php</b> file in your <b>app/Http/Controllers</b> folder and there is a <b>show()</b> method.</p>
+						<p><small><i>app/Http/Controllers/BlogController.php</i></small></p>
 						<pre><code><span>public function show($id)<br>{<br>    $post = Cms::blog()->posts()->find($id);<br>    return view('blog.show', compact('post'));<br>}</span></code></pre>
 
-						<p><b>In case you want to create a Post outside our admin panel, these are available columns:</b></p>
-						
+						<p>In case you want to create a Post outside SmartyCMS admin panel, these are all available columns.</b></p>
 						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->create([<br>    'blog_category_id', (int default(null))<br>    'uri_id', (string)<br>    'title', (string)<br>    'thumb', (string)<br>    'content', (string)<br>    'excerpt', (string)<br>    'visible', (int default(0))<br>    'meta_title', (string)<br>    'meta_description', (text)<br>    'meta_description', (text)<br>    'meta_keywords', (string)<br>]);</span></code></pre>
 						
-						<p><b>Get all comments for single post:</b></p>
-						<p><code>Cms::blog()->posts()->find($post_id)->comments</code> return you a relationship <b>hasMany</b> or <code>Cms::blog()->posts('my-first-blog')->comments</code></p>
+						<p>If you want to get <b>all comments</b> for single post.</p>
+						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->find($post_id)->comments /* return you a relationship hasMany */<br>Cms::blog()->posts('my-first-blog')->comments    /* same as above */</span></code></pre>
 
-						<p><b>Get Category for single post:</b></p>
-						<pre><code>Cms::blog()->posts()->find($post_id)->categories /* return a relationship belongsTo */<br>    Cms::blog()->posts('my-first-blog')->categories    return a relationship belongsTo</code></pre>
+						<p><b>If you want to <b>get Category</b> for single post.</b></p>
+						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->find($post_id)->categories /* return a relationship belongsTo */<br>    Cms::blog()->posts('my-first-blog')->categories    /* same as above */</span></code></pre>
+
+						<p>And this is how to retrieve post data in your front view.</p>
+						<p><small><i>resources/views/blog/index.blade.php</i></small></p>
+						<pre><code class="php7 hljs"><span>@foreach($posts as $post)<br>    {{ $post->title }}<br>@endforeach</span></code></pre>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="i4-3">

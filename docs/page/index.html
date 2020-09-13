@@ -275,7 +275,7 @@
 					    <section class="docs-section" id="i4-1">
 							<h2 class="section-heading">Model Instance</h2>
 							<p>You could access SmartyCMS Blog model instance with <code>Cms::blog()</code>.</p>
-							<pre><code class="php7 hljs"><span>Cms::blog()->posts       /* we will return you appropriate Query Builder */<br>Cms::blog()->categories /* same as above */<br>Cms::blog()->comments   /* same as above */</code></pre> 
+							<pre><code class="php7 hljs"><span>Cms::blog()->posts      /* return you an appropriate Query Builder */<br>Cms::blog()->categories /* same as above */<br>Cms::blog()->comments   /* same as above */</code></pre> 
 							<p>You could call a method to get <b>Query Builder</b>, or you could call a property to get a <b>Collection</b>.</p>
 						</section><!--//docs-intro-->
 				    </header>
@@ -294,10 +294,10 @@
 						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->create([<br>    'blog_category_id', (int default(null))<br>    'uri_id', (string)<br>    'title', (string)<br>    'thumb', (string)<br>    'content', (string)<br>    'excerpt', (string)<br>    'visible', (int default(0))<br>    'meta_title', (string)<br>    'meta_description', (text)<br>    'meta_description', (text)<br>    'meta_keywords', (string)<br>]);</span></code></pre>
 						
 						<p>If you want to get <b>all comments</b> for single post.</p>
-						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->find($post_id)->comments     /* return you a relationship hasMany */<br>Cms::blog()->posts('my-first-blog')->comments    /* same as above */</span></code></pre>
+						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->find($post_id)->comments   /* return you a relationship hasMany */<br>Cms::blog()->posts('my-first-blog')->comments    /* same as above */</span></code></pre>
 
 						<p>If you want to <b>get Category</If> for single post.</p>
-						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->find($post_id)->categories       /* return a relationship belongsTo */<br>    Cms::blog()->posts('my-first-blog')->categories    /* same as above */</span></code></pre>
+						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->find($post_id)->categories    /* return a relationship belongsTo */<br>Cms::blog()->posts('my-first-blog')->categories    /* same as above */</span></code></pre>
 
 						<p>And this is how to <b>retrieve post data</b> in your front view.</p>
 						<p><small><i>resources/views/blog/index.blade.php</i></small></p>

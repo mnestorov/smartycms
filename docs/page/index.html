@@ -301,7 +301,7 @@
 
 						<p>And this is how to <b>retrieve post data</b> in your front view.</p>
 						<p><small><i>resources/views/blog/index.blade.php</i></small></p>
-						<pre><code class="php7 hljs"><span>@foreach($posts as $post)<br>    {{ $post->title }}<br>    &lt;a href="{{ route('blog', [$post->id, $post->slug]) }}" class="text-right"&gt;READ MORE&lt;/a&gt;@endforeach</span></code></pre>
+						<pre><code class="html hljs"><span>@foreach($posts as $post)<br>    {{ $post->title }}<br>    &lt;a href="{{ route('blog', [$post->id, $post->slug]) }}" class="text-right"&gt;READ MORE&lt;/a&gt;<br>@endforeach</span></code></pre>
 					</section><!--//section-->
 					
 					<section class="docs-section" id="i4-3">

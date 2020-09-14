@@ -35,13 +35,6 @@ $(function () {
 		$(this).parent().submit();
 	})
 
-	// datapicker
-	$('.datepicker').datepicker({
-		dateFormat: 'yy-mm-dd',
-		altField: '#date',
-		yearRange: '1930:' + (new Date).getFullYear()
-	});
-
 	$('.icon-menu').click(function () {
 		$(this).toggleClass('open');
 		$(this).parent().toggleClass('open');

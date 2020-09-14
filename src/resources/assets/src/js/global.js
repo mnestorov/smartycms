@@ -125,11 +125,6 @@ $(document).ready(function() {
         }
         return true;
     });
-
-    $('#timepicker').datetimepicker({
-        Default: false,
-        format: 'yyyy-mm-dd hh:ii'
-    });
 });
 
 function myFunction(x) {

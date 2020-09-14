@@ -1,0 +1,334 @@
+<?php
+
+namespace SmartyStudio\SmartyCms\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+use SmartyStudio\SmartyCms\Models\Gallery;
+use SmartyStudio\SmartyCms\Models\GalleryElement;
+use SmartyStudio\SmartyCms\Models\GalleryImage;
+use SmartyStudio\SmartyCms\Models\PageElementType;
+use SmartyStudio\SmartyCms\Traits\HelpersTrait;
+use SmartyStudio\SmartyCms\Validations\PageElementValidation;
+
+class GalleriesController extends Controller
+{
+	use HelpersTrait;
+
+	public function __construct()
+	{
+		if (config('smartycms.modules.galleries') == false) {
+			return redirect(config('smartycms.route_prefix'))->with('error', 'Gallery module is disabled in config/smartycms.php')->send();
+		}
+	}
+
+	/**
+	 * Show all galleries.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getIndex()
+	{
+		$galleries = Gallery::whereNull('product_id')->get();
+
+		return view('admin::galleries.index', compact('galleries'));
+	}
+
+	/**
+	 * Create gallery.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getCreate()
+	{
+		return view('admin::galleries.create');
+	}
+
+	/**
+	 * Save gallery.
+	 *
+	 * @param Request $request
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function postSave(Request $request)
+	{
+		if (!empty($request->title) || $request->hasFile('images')) {
+			$key = $this->sanitizeElements($request->title);
+
+			if (Gallery::where(['key' => $key])->first()) {
+				return back()->with(['error' => 'Similar gallery exists, so we can create key(' . $key . '), try deferent title']);
+			}
+
+			Gallery::create([
+				'title' => $request->title,
+				'key'   => $key,
+			]);
+
+			return redirect(config('smartycms.route_prefix') . '/galleries');
+		} else {
+			return back()->with('error', 'Title is required');
+		}
+	}
+
+	/**
+	 * Edit gallery.
+	 *
+	 * @param string $gallery_title
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getEdit($gallery_id)
+	{
+		$gallery = Gallery::find($gallery_id);
+
+		return view('admin::galleries.edit', compact('gallery'));
+	}
+
+	/**
+	 * Update gallery.
+	 *
+	 * @param Request $request
+	 * @param string  $gallery_title
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function postUpdate(Request $request, $gallery_id, $image_id = false)
+	{
+		$gallery = Gallery::find($gallery_id);
+
+		if ($gallery->key != $request->key && Gallery::where(['key' => $request->key])->first()) {
+			return back()->with(['error' => 'This key exists']);
+		}
+
+		$this->uploadImages($request->file('images'), $gallery->id, $image_id);
+
+		$gallery->title = !empty($request->title) ? $request->title : $gallery->title;
+		$gallery->key = $this->sanitizeElements($request->key);
+		$gallery->save();
+
+		return back();
+	}
+
+	/**
+	 * Delete gallery and all image.
+	 *
+	 * @param string $gallery_title
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getDelete($gallery_id)
+	{
+		$gallery = Gallery::find($gallery_id);
+
+		if ($gallery->product_id) {
+			return redirect(config('smartycms.route_prefix') . '/galleries/edit/' . $gallery_id)->with('message', 'This gallery is in the use');
+		}
+
+		foreach ($gallery->images as $image) {
+			Storage::delete($image->source);
+
+			$image->delete();
+		}
+		$gallery->delete();
+
+		return redirect(config('smartycms.route_prefix') . '/galleries');
+	}
+
+	/**
+	 * Edit image.
+	 *
+	 * @param int $gallery_id, $image_id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getImage($gallery_id, $image_id)
+	{
+		$image = GalleryImage::find($image_id);
+		$element_types = PageElementType::all();
+
+		return view('admin::galleries.image', compact('image', 'element_types', 'gallery_id'));
+	}
+
+	/**
+	 * Create element.
+	 *
+	 * @param Request $request
+	 * @param int     $image_id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getCreateElement(Request $request, $image_id)
+	{
+		$page_element_type_id = $request->page_element_type_id;
+
+		return view('admin::galleries.elements.add_element', compact('page_element_type_id', 'image_id'));
+	}
+
+	/**
+	 * Post save Element.
+	 *
+	 * @param Request $request
+	 * @param int     $image_id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function postCreateElement(Request $request, $image_id)
+	{
+		// validation
+		$validation = Validator::make($request->all(), PageElementValidation::rules(), PageElementValidation::messages());
+
+		if ($validation->fails()) {
+			return back()->withInput()->withErrors($validation);
+		}
+		$image = GalleryImage::find($image_id);
+
+		$element = new GalleryElement();
+
+		$element->create([
+			'key'                  => $this->sanitizeElements($request->title),
+			'title'                => $request->title,
+			'content'              => $request->page_element_type_id == 3 ? $this->handleFileElement($request->file('content')) : $request->input('content'),
+			'image_id'             => $image_id,
+			'page_element_type_id' => $request->page_element_type_id,
+		]);
+
+		return redirect($request->segment(1) . '/galleries/image/' . $image->gallery_id . '/' . $image_id)->with('success', 'Element added');
+	}
+
+	/**
+	 * Edit element for page.
+	 *
+	 * @param int $element_id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getEditElement($element_id)
+	{
+		$element = GalleryElement::find($element_id);
+
+		$mime = empty($element->content) || $element->page_element_type_id != 3 ? null : Storage::mimeType($element->content);
+
+		return view('admin::galleries.elements.edit-element', compact('element', 'mime'));
+	}
+
+	/**
+	 * Update element.
+	 *
+	 * @param Request $request
+	 * @param int     $element_id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function postUpdateElement(Request $request, $element_id)
+	{
+		// validation
+		$validation = Validator::make($request->all(), PageElementValidation::rules(), PageElementValidation::messages());
+
+		if ($validation->fails()) {
+			return back()->withInput()->withErrors($validation);
+		}
+
+		$element = GalleryElement::find($element_id);
+		$image = GalleryImage::find($element->image_id);
+
+		$element->update([
+			'key'     => $this->sanitizeElements($request->key),
+			'title'   => $request->title,
+			'content' => $request->hasFile('content') ? $this->handleFileElement($request->file('content')) : $request->input('content'),
+		]);
+
+		return redirect($request->segment(1) . '/galleries/image/' . $image->gallery_id . '/' . $image->id)->with('success', 'Element updated');
+	}
+
+	/**
+	 * Delete element from storage.
+	 *
+	 * @param Request $request
+	 * @param int     $element_id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getDeleteElement(Request $request, $element_id)
+	{
+		$element = GalleryElement::find($element_id);
+		$image = GalleryImage::find($element->image_id);
+
+		if ($element->page_element_type_id == 3 && !empty($element->content)) {
+			Storage::delete($element->content);
+		}
+
+		$page_id = $element->page_id;
+		$element->delete();
+
+		return redirect($request->segment(1) . '/galleries/image/' . $image->gallery_id . '/' . $image->id)->with('success', 'Element Deleted');
+	}
+
+	/**
+	 * Delete element's file from storage.
+	 *
+	 * @param int $element_id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getDeleteElementFile($element_id)
+	{
+		$element = GalleryElement::find($element_id);
+
+		Storage::delete($element->content);
+
+		$element->content = null;
+		$element->save();
+
+		return back();
+	}
+
+	/**
+	 * Store a created images in storage.
+	 *
+	 * @param array $images
+	 * @param $gallery_id
+	 * @param bool $image_id
+	 *
+	 * @return bool
+	 */
+	private function uploadImages($images, $gallery_id, $image_id = false)
+	{
+		if (is_array($images)) {
+			foreach (array_filter($images) as $image) {
+				$storage_key = $this->saveImageWithRandomName($image, 'galleries/' . $gallery_id);
+
+				$data = [
+					'gallery_id'    => $gallery_id,
+					'source'        => $storage_key,
+				];
+
+				if ($image_id) {
+					GalleryImage::find($image_id)->update($data);
+				} else {
+					GalleryImage::create($data);
+				}
+			}
+
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Handle with file element.
+	 */
+	private function handleFileElement($file)
+	{
+		if ($file && $file->isValid()) {
+			$dirname = 'elements/' . $this->sanitizeFilename($file->getClientOriginalName());
+
+			Storage::put($dirname, file_get_contents($file));
+
+			return $dirname;
+		}
+	}
+}

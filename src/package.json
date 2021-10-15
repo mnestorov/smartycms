@@ -1,50 +1,45 @@
 {
-  "name": "smartycms",
-  "version": "1.0.0",
-  "description": "This is a Laravel content management system (CRUD) package that can help you get your administration panel in minutes.",
-  "main": "gulpfile.babel.js",
-  "scripts": {
-    "dev": "npm run development",
-    "prod": "npm run production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smartystudio/smartycms.git"
-  },
-  "keywords": [
-    "laravel",
-    "admin",
-    "crud",
-    "cms"
-  ],
-  "author": "Martin Nestorov",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/smartystudio/smartycms/issues"
-  },
-  "homepage": "https://github.com/smartystudio/smartycms#readme",
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/register": "^7.11.5",
-    "gulp": "^4.0.2"
-  },
-  "dependencies": {
-    "babel-loader": "^8.1.0",
-    "del": "^5.1.0",
-    "font-awesome": "^4.7.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-less": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "jquery": "^3.5.1",
-    "jquery-ui": "^1.12.1",
-    "timepicker": "^1.13.14",
-    "tinymce": "^5.4.2",
-    "vinyl-named": "^1.1.0",
-    "webpack-stream": "^6.1.0",
-    "yargs": "^16.0.0"
-  }
+	"name": "smartycms",
+	"version": "1.0.0",
+	"description": "This is a Laravel content management system (CRUD) package that can help you get your administration panel in minutes.",
+	"main": "webpack.mix.js",
+	"scripts": {
+		"dev": "npm run development",
+		"development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch-poll": "npm run watch -- --watch-poll",
+		"hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"prod": "npm run production",
+		"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+	},
+	"repository": "git+https://github.com/smartystudio/smartycms.git",
+	"keywords": [
+		"laravel",
+		"admin",
+		"crud",
+		"cms"
+	],
+	"author": "Martin Nestorov",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/smartystudio/smartycms/issues"
+	},
+	"homepage": "https://github.com/smartystudio/smartycms#readme",
+	"devDependencies": {
+		"cross-env": "^5.2.1",
+		"jquery": "^3.5.1",
+		"jquery-ui": "^1.12.1",
+		"laravel-mix": "^4.0.7",
+		"less": "^3.12.2",
+		"less-loader": "^7.0.1",
+		"resolve-url-loader": "^2.3.1",
+		"vue-template-compiler": "^2.6.12"
+	},
+	"dependencies": {
+		"font-awesome": "^4.7.0",
+		"modernizr": "^3.11.3",
+		"timepicker": "^1.13.14",
+		"tinymce": "^5.10.0",
+		"yarn": "^1.22.5"
+	}
 }

@@ -1,4 +1,4 @@
-# Smarty CMS v1.0
+# SmartyCMS v1.1
 
 This is a Laravel content management system (CRUD) package that can help you get your administration panel in minutes.
 
@@ -16,7 +16,7 @@ Once you have your administration panel up, you can easily put all of those elem
 
 For usage documentation see **Usage section** bellow.
 
-**Supports:** Laravel 5.2+ and PHP 7.0+
+**Supports:** Laravel 7.0+ and PHP 7.4+
 
 ---
 
@@ -116,7 +116,7 @@ Visit [Wiki](https://github.com/smartystudio/smartycms/wiki/) for detailed usage
 
 ## Contributing
 
-Contributions to the Smarty Cms library are welcome. Please note the following guidelines before submiting your pull request.
+Contributions to the SmartyCMS library are welcome. Please note the following guidelines before submiting your pull request.
 
 -   Follow [PSR-4](http://www.php-fig.org/psr/psr-4/) coding standards.
 -   Write tests for new functions and added features
@@ -131,13 +131,14 @@ $ composer install
 **npm install**
 
 ```
-$ npm --prefix ./src install
+$ cd src
+$ npm install
 ```
 
 **bower install**
 
 ```
-$ cd src/resources/assets/src
+$ cd src
 $ bower install
 ```
 
@@ -148,6 +149,32 @@ $ cd src
 $ npm run production
 ```
 
+**WARNING**
+
+If npm trow an error, then do this:
+
+First run:
+
+```
+$ rm -rf node_modules
+$ rm package-lock.json yarn.lock
+$ npm cache clear --force
+$ npm cache clean --force
+```
+
+Second run: 
+
+```
+$ npm install cross-env
+$ npm install 
+```
+
+Third run
+
+```
+$ npm run dev
+```
+
 ## License
 
-The Smarty CMS is open-source software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The SmartyCMS is open-source software licensed under the [MIT license](http://opensource.org/licenses/MIT).

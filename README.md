@@ -153,7 +153,7 @@ $ npm run production
 
 If npm trow an error, then do this:
 
-First run:
+First:
 
 ```
 $ rm -rf node_modules
@@ -162,18 +162,18 @@ $ npm cache clear --force
 $ npm cache clean --force
 ```
 
-Second run: 
+Second: 
 
 ```
 $ npm install cross-env
 $ npm install 
 ```
 
-Third run
+Third:
 
-```
-$ npm run dev
-```
+`$ npm run dev` or `$ npm run prod` (prod is build for production environment).
+
+
 
 ## License
 

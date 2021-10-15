@@ -1,7 +1,7 @@
-jQuery(document).ready(function ($) {
+jQuery(function($) {
     // Delete confirmation
-	$(document).ready(function () {
-		$("a.delete, a.remove-item").click(function (e) {
+	jQuery(function() {
+		$("a.delete, a.remove-item").on(function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 			if (confirm("Are you sure you want to delete?")) {
@@ -11,14 +11,14 @@ jQuery(document).ready(function ($) {
 	});
 
     // Delete confirmation AJAX
-	$(document).ready(function () {
-		$("body").delegate('button.delete', 'click', function (e) {
+	jQuery(function() {
+		$("body").on('button.delete', 'click', function (e) {
 			e.preventDefault();
 		});
 	});
 
     // CTRL + S to save in admin
-    $(document).keydown(function (event) {
+    jQuery(document).on(function (event) {
         if (!(String.fromCharCode(event.which).toLowerCase() === 's' && event.ctrlKey) && event.which !== 19)
             return true;
         $(".save").trigger("click");
@@ -26,28 +26,28 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-	$(document).ready(function () {
-		$('ul.account').click(function (e) {
+	jQuery(document).on(function () {
+		$('ul.account').on(function (e) {
 			e.stopPropagation();
 			$(this).find('.submenu-down').fadeToggle();
 		});
 	});
 
-	$(document).ready(function () {
-		$('body').click(function () {
+	jQuery(document).on(function () {
+		$('body').on(function () {
 			$('ul.account').find('.submenu-down').fadeOut();
 		});
 	});
 
     // on change submit sort
-	$(document).ready(function () {
+	jQuery(function() {
 		$('.sort-search-wrap .select-style').change(function () {
 			$(this).parent().submit();
 		});
 	});
 
     // datapicker
-	$(document).ready(function () {
+	jQuery(function() {
 		$('.datepicker').datepicker({
 			dateFormat: 'yy-mm-dd',
 			altField: '#date',
@@ -55,8 +55,8 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
-	$(document).ready(function () {
-		$('.icon-menu').click(function () {
+	jQuery(function() {
+		$('.icon-menu').on(function () {
 			$(this).toggleClass('open');
 			$(this).parent().toggleClass('open');
 
@@ -64,14 +64,14 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
-	$(document).ready(function () {
-		$('.input-box-wrap .button').click(function () {
+	jQuery(function() {
+		$('.input-box-wrap .button').on(function () {
 			$('.input-popup').fadeToggle();
 		});
 	});
 
-	$(document).ready(function () {
-		$(".upload").change(function () {
+	jQuery(function() {
+		$(".upload").on(function () {
 			readImageFromInput(this);
 		});
 	});
@@ -80,7 +80,7 @@ jQuery(document).ready(function ($) {
 $(window).on("load", function () {
     hideAlert();
 
-	$(document).ready(function () {
+	jQuery(function() {
 		$(".sortable").sortable({
 			stop: function (event, ui) {
 				var order = [];
@@ -110,8 +110,8 @@ $(window).on("load", function () {
 		});
 	});
 
-	$(document).ready(function () {
-		$('.copy').click(function () {
+	jQuery(function() {
+		$('.copy').on(function () {
 			$(this).addClass('clicked');
 			setTimeout(function () {
 				$('.copy.clicked').removeClass('clicked');

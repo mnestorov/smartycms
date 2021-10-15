@@ -1,0 +1,66 @@
+{
+    "name": "smartystudio/smartycms",
+    "description": "This is a Laravel content management system (CRUD) package that can help you get your administration panel in minutes.",
+    "homepage": "https://cms.smartystudio.net/",
+    "keywords": [
+        "admin",
+        "cms",
+        "crud",
+        "laravel"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Smarty Studio MBN Ltd.",
+            "email": "office@smartystudio.net"
+        },
+        {
+            "name": "Martin Nestorov",
+            "email": "m.nestorov@smartystudio.net"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/database"
+        ],
+        "psr-4": {
+            "SmartyStudio\\SmartyCms\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "laravel/framework": "^8.0",
+        "intervention/image": "^2.3",
+        "intervention/imagecache": "^2.3",
+        "barryvdh/laravel-dompdf": "^0.9.0",
+        "doctrine/dbal": "^2.10",
+        "php": ">=7.4"
+    },
+    "scripts": {
+        "post-package-update": [
+            "php artisan smartycms:update"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4 || ^9.0",
+        "fzaninotto/faker": "^1.9",
+        "mockery/mockery": "^1.4",
+        "orchestra/testbench": "^6.13"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SmartyStudio\\SmartyCms\\AdminServiceProvider"
+            ],
+            "aliases": {
+                "Cms": "SmartyStudio\\SmartyCms\\Facades\\Cms"
+            }
+        }
+    }
+}

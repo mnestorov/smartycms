@@ -117,8 +117,8 @@ var blueMapStyle = [
     }
 ];
 
-jQuery(document).ready(function ($) {
-    $(document).keydown(function (e) {
+jQuery(function($) {
+    $(document).on(function (e) {
         var key = undefined;
         var possible = [e.key, e.keyIdentifier, e.keyCode, e.which];
 

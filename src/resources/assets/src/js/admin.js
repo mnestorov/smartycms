@@ -1,17 +1,21 @@
-$(function () {
+jQuery(document).ready(function ($) {
     // Delete confirmation
-    $("a.delete, a.remove-item").click(function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (confirm("Are you sure you want to delete?")) {
-            window.location = $(this).attr("href");
-        }
-    });
+	$(document).ready(function () {
+		$("a.delete, a.remove-item").click(function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			if (confirm("Are you sure you want to delete?")) {
+				window.location = $(this).attr("href");
+			}
+		});
+	});
 
     // Delete confirmation AJAX
-    $("body").delegate('button.delete', 'click', function (e) {
-        e.preventDefault();
-    });
+	$(document).ready(function () {
+		$("body").delegate('button.delete', 'click', function (e) {
+			e.preventDefault();
+		});
+	});
 
     // CTRL + S to save in admin
     $(document).keydown(function (event) {
@@ -22,80 +26,98 @@ $(function () {
         return false;
     });
 
-    $('ul.account').click(function (e) {
-        e.stopPropagation();
-        $(this).find('.submenu-down').fadeToggle();
-    });
+	$(document).ready(function () {
+		$('ul.account').click(function (e) {
+			e.stopPropagation();
+			$(this).find('.submenu-down').fadeToggle();
+		});
+	});
 
-    $('body').click(function () {
-        $('ul.account').find('.submenu-down').fadeOut();
-    });
+	$(document).ready(function () {
+		$('body').click(function () {
+			$('ul.account').find('.submenu-down').fadeOut();
+		});
+	});
 
     // on change submit sort
-    $('.sort-search-wrap .select-style').change(function () {
-        $(this).parent().submit();
-    });
+	$(document).ready(function () {
+		$('.sort-search-wrap .select-style').change(function () {
+			$(this).parent().submit();
+		});
+	});
 
     // datapicker
-    $('.datepicker').datepicker({
-        dateFormat: 'yy-mm-dd',
-        altField: '#date',
-        yearRange: '1930:' + (new Date).getFullYear()
-    });
+	$(document).ready(function () {
+		$('.datepicker').datepicker({
+			dateFormat: 'yy-mm-dd',
+			altField: '#date',
+			yearRange: '1930:' + (new Date).getFullYear()
+		});
+	});
 
-    $('.icon-menu').click(function () {
-        $(this).toggleClass('open');
-        $(this).parent().toggleClass('open');
+	$(document).ready(function () {
+		$('.icon-menu').click(function () {
+			$(this).toggleClass('open');
+			$(this).parent().toggleClass('open');
 
-        $(this).siblings('.submenu').slideToggle();
-    });
+			$(this).siblings('.submenu').slideToggle();
+		});
+	});
 
-    $('.input-box-wrap .button').click(function () {
-        $('.input-popup').fadeToggle();
-    });
+	$(document).ready(function () {
+		$('.input-box-wrap .button').click(function () {
+			$('.input-popup').fadeToggle();
+		});
+	});
 
-    $(".upload").change(function () {
-        readImageFromInput(this);
-    });
+	$(document).ready(function () {
+		$(".upload").change(function () {
+			readImageFromInput(this);
+		});
+	});
 });
 
 $(window).on("load", function () {
     hideAlert();
 
-    $(".sortable").sortable({
-        stop: function (event, ui) {
-            var order = [];
-            var sortingObject = $(this);
-            var link = sortingObject.data('link');
+	$(document).ready(function () {
+		$(".sortable").sortable({
+			stop: function (event, ui) {
+				var order = [];
+				var sortingObject = $(this);
+				var link = sortingObject.data('link');
 
-            sortingObject.find('.items-order').each(function () {
-                order.push($(this).data('id'));
-            });
+				sortingObject.find('.items-order').each(function () {
+					order.push($(this).data('id'));
+				});
 
-            if ($(ui.item).next('.no-scrolable').length > 0) {
-                sortingObject.sortable('cancel');
-            }
+				if ($(ui.item).next('.no-scrolable').length > 0) {
+					sortingObject.sortable('cancel');
+				}
 
-            if (!sortingObject.hasClass("no-ajax")) {
-                $.post(link, {order: order}, function (data) {
-                    if (data === 'Success') {
-                        $(sortingObject).parent().append("<span class='alert alert-success'>Order saved!</span>");
-                    } else {
-                        $(sortingObject).parent().append("<span class='alert alert-error'>Order saving error!</span>");
-                    }
-                    hideAlert();
-                });
-            }
-        },
-        cancel: ".no-scrolable"
-    });
+				if (!sortingObject.hasClass("no-ajax")) {
+					$.post(link, {order: order}, function (data) {
+						if (data === 'Success') {
+							$(sortingObject).parent().append("<span class='alert alert-success'>Order saved!</span>");
+						} else {
+							$(sortingObject).parent().append("<span class='alert alert-error'>Order saving error!</span>");
+						}
+						hideAlert();
+					});
+				}
+			},
+			cancel: ".no-scrolable"
+		});
+	});
 
-    $('.copy').click(function () {
-        $(this).addClass('clicked');
-        setTimeout(function () {
-            $('.copy.clicked').removeClass('clicked');
-        }, 1000);
-    });
+	$(document).ready(function () {
+		$('.copy').click(function () {
+			$(this).addClass('clicked');
+			setTimeout(function () {
+				$('.copy.clicked').removeClass('clicked');
+			}, 1000);
+		});
+	});
 });
 
 function codeAddress(address, proposal, resultsMap) {

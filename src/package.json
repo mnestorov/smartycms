@@ -39,7 +39,6 @@
 		"font-awesome": "^4.7.0",
 		"modernizr": "^3.11.3",
 		"timepicker": "^1.13.14",
-		"tinymce": "^5.10.0",
-		"yarn": "^1.22.5"
+		"tinymce": "^5.10.0"
 	}
 }

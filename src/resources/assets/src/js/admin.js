@@ -41,8 +41,8 @@ jQuery(function($) {
 
     // on change submit sort
 	jQuery(function() {
-		$('.sort-search-wrap .select-style').change(function () {
-			$(this).parent().submit();
+		$('.sort-search-wrap .select-style').on(function () {
+			$(this).parent().on();
 		});
 	});
 
@@ -172,7 +172,7 @@ function hideAlert() {
 }
 
 function ajaxDeleteGalleryImage(url, id) {
-    if (confirm("Are you sure you want delete?")) {
+    if (confirm("Are you sure you want to delete this?")) {
         $.post(url, function (data) {
             if (data) {
                 $('[data-id=' + id + ']').remove();

@@ -2,41 +2,41 @@
 
 namespace SmartyStudio\SmartyCms\Tests\Unit;
 
-use SmartyStudio\SmartyCms\Facades\Cms;
-use SmartyStudio\SmartyCms\Models\Page;
-use SmartyStudio\SmartyCms\Models\Order;
-use SmartyStudio\SmartyCms\Models\Gallery;
-use SmartyStudio\SmartyCms\Models\Product;
-use SmartyStudio\SmartyCms\Models\BlogPost;
 use Illuminate\Database\Eloquent\Collection;
-use DMS\PHPUnitExtensions\ArraySubset\Assert;
+use Cms;
+use SmartyStudio\SmartyCms\Blog;
 use SmartyStudio\SmartyCms\Models\BlogCategory;
-use SmartyStudio\SmartyCms\Models\ProductComment;
+use SmartyStudio\SmartyCms\Models\BlogPost;
 use SmartyStudio\SmartyCms\Models\BlogPostComment;
+use SmartyStudio\SmartyCms\Models\Gallery;
+use SmartyStudio\SmartyCms\Models\Order;
+use SmartyStudio\SmartyCms\Models\Page;
+use SmartyStudio\SmartyCms\Models\Product;
 use SmartyStudio\SmartyCms\Models\ProductCategory;
+use SmartyStudio\SmartyCms\Models\ProductComment;
 use SmartyStudio\SmartyCms\Tests\SmartyCmsTestCase;
 
 class PackageTest extends SmartyCmsTestCase
 {
-	public function tearDown() : void
+	public function tearDown()
 	{
 		parent::tearDown();
 	}
 
 	public function testDefaultConfig()
 	{
-		Assert::assertArraySubset(['route_prefix' => 'admin', 'google_map_api' => ''], require __DIR__ . '/../../src/config/smartycms.php');
+		$this->assertArraySubset(['route_prefix' => 'administration', 'google_map_api' => ''], require __DIR__ . '/../../src/config/smartycms.php');
 	}
 
 	public function testFacade()
 	{
-		$this->assertEquals(CMS_test::getFacadeName(), 'cms');
+		$this->assertEquals(CMS_test::getFacadeName(), 'sla');
 	}
 
-	/* public function testCMSFacadeHaveBlogModel()
+	public function testCMSFacadeHaveBlogModel()
 	{
 		$this->assertInstanceOf(Blog::class, Cms::Blog());
-	} */
+	}
 
 	public function testCMSFacadeHaveBlogPostModel()
 	{
@@ -95,15 +95,15 @@ class PackageTest extends SmartyCmsTestCase
 
 	public function testServiceProvider()
 	{
-		$this->assertTrue($this->app->bound('cms'));
+		$this->assertTrue($this->app->bound('sla'));
 		$this->assertTrue($this->app->bound('command.smartycms.install'));
 		$this->assertTrue($this->app->bound('command.smartycms.update'));
 	}
 
 	public function testServiceProviderExtendGuard()
 	{
-		Assert::assertArraySubset(['provider' => 'system-admins'], $this->app->config['auth']['guards']['system-admin']);
-		Assert::assertArraySubset(['model' => 'SmartyStudio\SmartyCms\Models\Admin'], $this->app->config['auth']['providers']['system-admins']);
+		$this->assertArraySubset(['provider' => 'system-admins'], $this->app->config['auth']['guards']['system-admin']);
+		$this->assertArraySubset(['model' => 'SmartyStudio\SmartyCms\Admin'], $this->app->config['auth']['providers']['system-admins']);
 	}
 }
 

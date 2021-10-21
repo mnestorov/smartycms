@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <title>SmartyCMS | Documentation</title>
     <!-- Meta -->
@@ -8,21 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="This is an official documentation website for SmartyCMS - Laravel admin panel package">
 	<meta name="author" content="Smarty Studio MBN Ltd.">
-    <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="shortcut icon" href="../favicon.ico">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
 	<!-- FontAwesome JS-->
     <script defer src="../assets/fontawesome/js/all.min.js"></script>
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
-    <!-- Theme CSS -->  
+    <!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme.css">
 	<!-- Highlight CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/atom-one-dark.min.css"/>
-</head> 
+</head>
 
-<body class="docs-page">    
-    <header class="header fixed-top">	    
+<body class="docs-page">
+    <header class="header fixed-top">
         <div class="branding docs-branding">
             <div class="container-fluid position-relative py-2">
                 <div class="docs-logo-wrapper">
@@ -31,19 +31,34 @@
 	                    <span></span>
 	                    <span></span>
 	                </button>
-	                <div class="site-logo"><a class="navbar-brand" href="../"><img class="logo-icon mr-2" src="../assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">SmartyCMS <span class="text-alt">Docs</span></span></a></div>    
+	                <div class="site-logo">
+                        <a class="navbar-brand" href="../">
+                            <img class="logo-icon mr-2" src="../assets/images/coderdocs-logo.svg" alt="logo">
+                            <span class="logo-text">SmartyCMS <span class="text-alt">Docs</span></span>
+                        </a>
+                    </div>
                 </div><!--//docs-logo-wrapper-->
 	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
 					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-						<li class="list-inline-item"><a href="https://github.com/smartystudio/"><i class="fab fa-github fa-fw"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-facebook fa-fw"></i></a></li>
+						<li class="list-inline-item">
+                            <a href="https://github.com/smartystudio/">
+                                <i class="fab fa-github fa-fw"></i>
+                            </a>
+                        </li>
+						<li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-facebook fa-fw"></i>
+                            </a>
+                        </li>
 		            </ul>
-					<a href="https://github.com/smartystudio/smartycms/" class="btn btn-primary d-none d-lg-flex"><i class="fab fa-github fa-fw mt-1 mr-2"></i> &nbsp;View on GitHub</a>
+					<a href="https://github.com/smartystudio/smartycms/" class="btn btn-primary d-none d-lg-flex">
+                        <i class="fab fa-github fa-fw mt-1 mr-2"></i> &nbsp;View on GitHub
+                    </a>
 	            </div><!--//docs-top-utilities-->
             </div><!--//container-->
         </div><!--//branding-->
     </header><!--//header-->
-    
+
     <div class="docs-wrapper">
 	    <div id="docs-sidebar" class="docs-sidebar">
 		    <div class="top-search-box d-lg-none p-3">
@@ -54,37 +69,127 @@
             </div>
 		    <nav id="docs-nav" class="docs-nav navbar">
 			    <ul class="section-items list-unstyled nav flex-column pb-3" id="jsSearchUl">
-				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#s1"><span class="theme-icon-holder mr-2"><i class="fas fa-map-signs"></i></span>Introduction</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#i1-1">About SmartyCMS</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#i1-2">Modules</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#s2"><span class="theme-icon-holder mr-2"><i class="fas fa-arrow-down"></i></span>Installation</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i2-1">Install using Composer</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i2-2">Publish Assets</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i2-3">Compiling Assets (Mix)</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#s3"><span class="theme-icon-holder mr-2"><i class="fas fa-laptop-code"></i></span>Page</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i3-1">Instance</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i3-2">Elements</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i3-3">SEO Meta</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#s4"><span class="theme-icon-holder mr-2"><i class="fas fa-book-reader"></i></span>Blog</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i4-1">Instance</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i4-2">Posts</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#i4-3">Categories</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#i4-4">Comments</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#5"><span class="theme-icon-holder mr-2"><i class="fas fa-shopping-cart"></i></span>Shop</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i5-1">Instance</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i5-2">Products</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#i5-3">Categories</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#i5-4">Comments</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#i5-5">Orders</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#6"><span class="theme-icon-holder mr-2"><i class="fas fa-box fa-fw"></i></span>Galleries</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i6-1">Instance</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#7"><span class="theme-icon-holder mr-2"><i class="fas fa-file-image"></i></span>Images and Files</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i7-1">Instances</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#8"><span class="theme-icon-holder mr-2"><i class="fas fa-map-marked-alt"></i></span>Locations and Maps</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i8-1">Instances</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i8-2">Locations</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#i8-3">Map</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#9"><span class="theme-icon-holder mr-2"><i class="fas fa-bullhorn"></i></span>Leads</a></li>
+				    <li class="nav-item section-title">
+                        <a class="nav-link scrollto active" href="#s1">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-map-signs"></i>
+                            </span>Introduction
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link scrollto" href="#i1-1">About SmartyCMS</a></li>
+					<li class="nav-item">
+                        <a class="nav-link scrollto" href="#i1-2">Modules</a></li>
+				    <li class="nav-item section-title mt-3">
+                        <a class="nav-link scrollto" href="#s2">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-arrow-down"></i>
+                            </span>Installation
+                        </a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i2-1">Install using Composer</a></li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i2-2">Publish Assets</a></li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i2-3">Compiling Assets (Mix)</a></li>
+				    <li class="nav-item section-title mt-3">
+                        <a class="nav-link scrollto" href="#s3">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-laptop-code"></i>
+                            </span>Page
+                        </a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i3-1">Instance</a></li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i3-2">Elements</a></li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i3-3">SEO Meta</a></li>
+				    <li class="nav-item section-title mt-3">
+                        <a class="nav-link scrollto" href="#s4">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-book-reader"></i>
+                            </span>Blog
+                        </a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i4-1">Instance</a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i4-2">Posts</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link scrollto" href="#i4-3">Categories</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link scrollto" href="#i4-4">Comments</a>
+                    </li>
+				    <li class="nav-item section-title mt-3">
+                        <a class="nav-link scrollto" href="#s5">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>Shop
+                        </a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i5-1">Instance</a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i5-2">Products</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link scrollto" href="#i5-3">Categories</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link scrollto" href="#i5-4">Comments</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link scrollto" href="#i5-5">Orders</a>
+                    </li>
+				    <li class="nav-item section-title mt-3">
+                        <a class="nav-link scrollto" href="#s6">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-box fa-fw"></i>
+                            </span>Galleries
+                        </a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i6-1">Instance</a>
+                    </li>
+				    <li class="nav-item section-title mt-3">
+                        <a class="nav-link scrollto" href="#s7">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-file-image"></i>
+                            </span>Images and Files
+                        </a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i7-1">Instances</a>
+                    </li>
+				    <li class="nav-item section-title mt-3">
+                        <a class="nav-link scrollto" href="#s8">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </span>Locations and Maps
+                        </a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i8-1">Instances</a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i8-2">Locations</a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i8-3">Map</a>
+                    </li>
+				    <li class="nav-item section-title mt-3">
+                        <a class="nav-link scrollto" href="#s9">
+                            <span class="theme-icon-holder mr-2">
+                                <i class="fas fa-bullhorn"></i>
+                            </span>Leads
+                        </a>
+                    </li>
 			    </ul>
 		    </nav><!--//docs-nav-->
 	    </div><!--//docs-sidebar-->
@@ -92,12 +197,45 @@
 		    <div class="container">
 			    <article class="docs-article" id="s1">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2020-09-12</span></h1>
+					    <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2021-10-21</span></h1>
 					    <section class="docs-intro">
 						    <p>SmartyCMS is a Laravel admin panel CRUD (create, read, update and delete) package that can help you get your administration panel in minutes.</p>
-						</section><!--//docs-intro-->
+                            <p>The package is updated to work with <b>Laravel 8</b> and <b>PHP 8.0+</b></p>
+                            <div class="table-responsive my-4">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="theme-bg-light" width="20%">Supports</th>
+                                            <th class="theme-bg-light" width="40%">PHP version</th>
+                                            <th class="theme-bg-light" width="40%">Laravel version</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="20%">Yes</td>
+                                            <td width="20%">Yes</td>
+                                            <td width="20%">Yes</td>
+                                            <td width="20%">Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40%">7.2</td>
+                                            <td width="40%">7.3</td>
+                                            <td width="40%">7.4</td>
+                                            <td width="40%">8.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40%">5.8</td>
+                                            <td width="40%">6.0+</td>
+                                            <td width="40%">7.0+</td>
+                                            <td width="40%">8.0+</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p><b>Important:</b> Please, make sure you're at the latest version of Laravel 6, 7 or 8 to get PHP 8 support.</p>
+                        </section><!--//docs-intro-->
 					</header>
-					
+
 				    <section class="docs-section" id="i1-1">
 						<h2 class="section-heading">About SmartyCMS</h2>
 						<p>SmartyCMS will provide you with a visual interface for the admin panel (the HTML, the CSS, the JS). It pulls in the
@@ -149,7 +287,7 @@
 						<p>Once you have your administration panel up, you can easily put all of those elements wherever you want in your application files.</p>
 					</section><!--//section-->
 			    </article>
-			    
+
 			    <article class="docs-article" id="s2">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Installation</h1>
@@ -159,28 +297,28 @@
 				    </header>
 				     <section class="docs-section" id="i2-1">
 						<h2 class="section-heading">Install using Composer</h2>
-						
+
 						<pre><code class="plaintext hljs"><span class="hljs-string">$ composer require smartystudio/smartycms</span></code></pre>
-						
+
 						<p>In Laravel 5.5+, with Package Auto Discovery it should all be set automatically. For < 5.5, follow these instructions after composer finishes package installation:</p>
 						<p>Add the service provider to the <code>'providers'</code> array in <code>config/app.php</code> for Laravel 5.4 and lower.</p>
-						
+
 						<pre><code class="plaintext hljs">SmartyStudio\SmartyCms\AdminServiceProvider::class,</code></pre>
-						
+
 						<p>If you want to use this package as a facade, add this line to the <code>$aliases</code> array in <code>config/app.php</code>.</p>
-						
+
 						<pre><code class="plaintext hljs">'Cms' => SmartyStudio\SmartyCms\Facades\Cms::class,</code></pre>
-						
+
 						<p><b>Start package installation by running install command below:</b></p>
-						
+
 						<pre><code class="plaintext hljs"><span class="hljs-string">$ php artisan smartycms:install</span></code></pre>
-						
+
 						<p>If you want to install package again from scratch, just delete the config/smartycms.php file and drop database, then run
 						install command again.</p>
 						<p><b>If our package update throws composer error, try updating dependencies manually with commend below:</b></p>
-						
+
 						<pre><code class="plaintext hljs"><span class="hljs-string">$ php artisan smartycms:update</span></code></pre>
-						
+
 						<br>
 						<div class="callout-block callout-block-info">
                             <div class="content">
@@ -198,19 +336,19 @@
 						<p>For instance, if you use Vagrant, you will have to do vagrant ssh first, go to your project directory, and run this
 						install command. The same way you run your standard Laravel's migration command.</p>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i2-2">
 						<h2 class="section-heading">Publish Assets</h2>
 						<p>Now, when your package's users execute the <code>vendor:publish</code> command, your assets will be copied to the specified publish location. Since you will typically need to overwrite the assets every time the package is updated, you may use the <code>--force</code> flag:</p>
-						
+
 						<pre><code class="plaintext hljs"><span class="hljs-string">$ php artisan vendor:publish --tag=public --force</span></code></p>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i2-3">
 						<h2 class="section-heading">Compiling Assets (Mix)</h2>
 						<p>It's important if you make some changes on style files, to compile assets after you're done with all style changes.</p>
 						<h3>Install npm or yarn</h3>
-						
+
 						<p><b>npm</b></p>
 						<pre><code class="plaintext hljs"><span class="hljs-string">$ cd src/</span><br><span class="hljs-string">$ npm install</span></code></pre>
 
@@ -226,8 +364,8 @@
 						<pre><code class="plaintext hljs"><span class="hljs-string">$ cd src/</span><br><span class="hljs-string">$ yarn prod</span></code></pre>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
-			    
-			    
+
+
 			    <article class="docs-article" id="s3">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Page</h1>
@@ -242,21 +380,21 @@
 						<pre><code class="php7 hljs"><span>Cms::page();           /* this will return you appropriate Query Builder */</span><br><span>Cms::page($page);      /* this will return the Page Model, where `$page` can be page ID or page slug. */</span></code></pre>
 
 						<pre><code class="php7 hljs"><span>Cms::page()->menu();   /* generate nested menu from `Pages` */</span></code></pre>
-						
+
 						<p>This will generate your HTML.</p>
 
 						<p><b>You can style your menu like this:</b></p>
-						
+
 						<pre><code class="css hljs"><span>.nav-list { <br>   li > ul { <br>      padding-left: 20px; <br>      padding-right: 20px; <br>   } <br>}</span></code></pre>
 						<pre><code class="php hljs"><span>Cms::page()->tree();  /* generates menu array from `Pages` */</span></code></pre>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i3-2">
 						<h2 class="section-heading">Elements</h2>
-						
+
 						<pre><code class="php7 hljs"><span>Cms::page($page)->elements();    /* returns you all page elements as relationship `hasMany`. */</span><br><span>Cms::element($element_key);      /* returns PageElement Model */</span><br><span>echo Cms::element($element_key); /* returns content of the element, like Cms::element($element_key)->content */</span></code></pre>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i3-3">
 						<h2 class="section-heading">SEO Meta</h2>
 						<h3>Implementation</h3>
@@ -265,7 +403,7 @@
 						<pre><code class="php7 hljs"><span>return view('about', CMS::page('about')->getMeta());</span></code></pre>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
-			    
+
 			    <article class="docs-article" id="s4">
 				    <header class="docs-header">
 						<h1 class="docs-heading">Blog</h1>
@@ -275,7 +413,7 @@
 					    <section class="docs-section" id="i4-1">
 							<h2 class="section-heading">Model Instance</h2>
 							<p>You could access SmartyCMS Blog model instance with <code>Cms::blog()</code>.</p>
-							<pre><code class="php7 hljs"><span>Cms::blog()->posts      /* return you an appropriate Query Builder */<br>Cms::blog()->categories /* same as above */<br>Cms::blog()->comments   /* same as above */</code></pre> 
+							<pre><code class="php7 hljs"><span>Cms::blog()->posts      /* return you an appropriate Query Builder */<br>Cms::blog()->categories /* same as above */<br>Cms::blog()->comments   /* same as above */</code></pre>
 							<p>You could call a method to get <b>Query Builder</b>, or you could call a property to get a <b>Collection</b>.</p>
 						</section><!--//docs-intro-->
 				    </header>
@@ -292,7 +430,7 @@
 
 						<p>In case you want to create a Post outside SmartyCMS admin panel, these are all available columns.</b></p>
 						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->create([<br>    'blog_category_id', (int default(null))<br>    'uri_id', (string)<br>    'title', (string)<br>    'thumb', (string)<br>    'content', (string)<br>    'excerpt', (string)<br>    'visible', (int default(0))<br>    'meta_title', (string)<br>    'meta_description', (text)<br>    'meta_description', (text)<br>    'meta_keywords', (string)<br>]);</span></code></pre>
-						
+
 						<p>If you want to get <b>all comments</b> for single post.</p>
 						<pre><code class="php7 hljs"><span>Cms::blog()->posts()->find($post_id)->comments   /* return you a relationship hasMany */<br>Cms::blog()->posts('my-first-blog')->comments    /* same as above */</span></code></pre>
 
@@ -306,12 +444,12 @@
 						<p><small><i>resources/views/blog/index.blade.php</i></small></p>
 						<pre><code class="html hljs"><span>@foreach($posts as $post)<br>    {{ $post->title }}<br>    &lt;a href="{{ route('blog', [$post->id, $post->slug]) }}"&gt;Read more&lt;/a&gt;<br>@endforeach</span></code></pre>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i4-3">
 						<h2 class="section-heading">Categories</h2>
 						<pre><code class="php7 hljs">Cms::blog()->categories /* you get a Query Builder */<br>Cms::blog()->posts      /* same as above */</code>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i4-4">
 						<h2 class="section-heading">Comments</h2>
 						<pre><code class="php7 hljs"><span>Cms::blog()->comments /* you get a Query Builder */<br>Cms::blog()->posts    /* same as above */</span></code></pre>
@@ -321,7 +459,7 @@
 						<p><pre><code class="php7 hljs"><span>Cms::blog()->posts('my-first-blog')->comments()->create([<br>    'name', (string)<br>    'email', (string)<br>    'content', (text)<br>    'approved', (int) (default 0)<br>});</span></code></pre></p>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
-			    
+
 			    <article class="docs-article" id="s5">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Shop</h1>
@@ -335,7 +473,7 @@
 						<p><code>Cms::shop()->products()</code> or <code>Cms::shop()->categories()</code> or <code>Cms::shop()->comments()</code> or <code>Cms::shop()->orders()</code> we will return you appropriate <b>Query Builder</b>.</p>
 						<p>You can call a method to get <b>Query Builder</b>, or you can call a property to get a <b>Collection</b>.</p>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i5-2">
 						<h2 class="section-heading">Products</h2>
 						<p><code>Cms::shop()->products()</code> will return you <b>Query Builder</b>, without brackets products will return <b>Collection</b>.</p>
@@ -345,7 +483,7 @@
 						<p>Every product has multiple comments on relationship <b>hasMany</b> on <code>comments()</code> method.</p>
 						<p>Every product has multiple similar products on <code>similar()</code> method.</p>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i5-3">
 							<h2 class="section-heading">Product categories</h2>
 							<p><code>Cms::shop()->categories()</code> will return you <b>Query Builder</b>, without brackets categories will return <b>Collection</b>.</p>
@@ -493,8 +631,8 @@
 						<p><code>items()</code> - return order items</p>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
-			    
-			    
+
+
 		        <article class="docs-article" id="s6">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Galleries</h1>
@@ -521,8 +659,8 @@
 						<pre><code class="php7 hljs"><span>foreach(Cms::gallery('foo')->images as $image) {<br>    echo '&lt;img src="$image->url"&gt;';<br>}</span></code></pre>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
-			    
-			    
+
+
 			    <article class="docs-article" id="s7">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Images and Files</h1>
@@ -556,8 +694,8 @@
 						<br>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
-			    
-			    
+
+
 			    <article class="docs-article" id="s8">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Locations and Maps</h1>
@@ -571,7 +709,7 @@
 						<p>Please set your Google API key in our <b>config/smartycms.php</b> in array <b>google_map_api</b> for our map</p>
 						<p>Possibility to add a custom marker, thumb image or image for every location.</p>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i8-2">
 						<h2 class="section-heading">Locations</h2>
 						<p><b>Get all locations:</b></p>
@@ -580,12 +718,12 @@
 						<p><b>Get single location:</b></p>
 						<pre><code class="php7 hljs">Cms::location($location_key)</code></pre>
 					</section><!--//section-->
-					
+
 					<section class="docs-section" id="i8-3">
 						<h2 class="section-heading">Map</h2>
 						<p><b>Get all maps:</b></p>
 						<pre><code class="php7 hljs">Cms::maps()</code></pre>
-						
+
 						<p><b>Get single map:</b></p>
 						<pre><code class="php7 hljs">Cms::map($map_key)</code></pre>
 
@@ -593,8 +731,8 @@
 						<pre><code class="php7 hljs">Cms::map($map_key)->locations /* return hasMany relationship */</code></pre>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
-			    
-			    
+
+
 			    <article class="docs-article" id="s9">
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Leads</h1>
@@ -619,27 +757,27 @@
 				    <div class="container text-center py-5">
 					    <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
 				        <ul class="social-list list-unstyled pt-4 mb-0">
-						    <li class="list-inline-item"><a href="https://github.com/smartystudio"><i class="fab fa-github fa-fw"></i></a></li> 
+						    <li class="list-inline-item"><a href="https://github.com/smartystudio"><i class="fab fa-github fa-fw"></i></a></li>
 				            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f fa-fw"></i></a></li>
 				        </ul><!--//social-list-->
 				    </div>
 			    </footer>
-		    </div> 
+		    </div>
 	    </div>
 	</div><!--//docs-wrapper-->
-	
-    
-    <!-- Javascript -->          
+
+
+    <!-- Javascript -->
     <script src="../assets/plugins/jquery-3.4.1.min.js"></script>
     <script src="../assets/plugins/popper.min.js"></script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
-    
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
     <!-- Page Specific JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-    <script src="../assets/js/highlight-custom.js"></script> 
+    <script src="../assets/js/highlight-custom.js"></script>
     <script src="../assets/plugins/jquery.scrollTo.min.js"></script>
-    <script src="../assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script> 
-	<script src="../assets/js/docs.js"></script> 
+    <script src="../assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
+	<script src="../assets/js/docs.js"></script>
 
 	<!-- Dynamic search -->
 	<script async>
@@ -663,4 +801,4 @@
 		}
 	</script>
 </body>
-</html> 
+</html>

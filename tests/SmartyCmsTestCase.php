@@ -4,10 +4,9 @@ namespace SmartyStudio\SmartyCms\Tests;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schema;
-use Orchestra\Testbench\TestCase;
 use SmartyStudio\SmartyCms\Database\Seeds\DatabaseSeeder as DatabaseSeeder;
 
-abstract class SmartyCmsTestCase extends TestCase
+abstract class SmartyCmsTestCase extends \Orchestra\Testbench\TestCase
 {
 	protected function getEnvironmentSetUp($app)
 	{
@@ -27,7 +26,7 @@ abstract class SmartyCmsTestCase extends TestCase
 		];
 	}
 
-	public function setUp()
+	public function setUp() : void
 	{
 		parent::setUp();
 
@@ -43,9 +42,9 @@ abstract class SmartyCmsTestCase extends TestCase
 		$this->withFactories(__DIR__ . '/../src/database/factories');
 	}
 
-	public function tearDown()
+	public function tearDown() : void
 	{
-		Artisan::call('migrate:reset', [
+		Artisan::call('migrate:rollback', [
 			'--path' => '../../../../src/database/migrations',
 		]);
 

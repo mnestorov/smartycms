@@ -1,4 +1,6 @@
-# SmartyCMS v1.1
+# SmartyCMS v1.2
+
+**Updated to work with Laravel 8 and PHP 8.0+**
 
 This is a Laravel content management system (CRUD) package that can help you get your administration panel in minutes.
 
@@ -16,7 +18,9 @@ Once you have your administration panel up, you can easily put all of those elem
 
 For usage documentation see **Usage section** bellow.
 
-**Supports:** Laravel 7.0+ and PHP 7.4+
+**Supports:** Laravel 6.0+, 7.0+, 8.0+ and PHP 7.2+, 8.0+
+
+**Important:** Please, make sure you're at the latest version of Laravel 6, 7 or 8 to get PHP 8 support.
 
 ---
 
@@ -32,7 +36,7 @@ In Laravel 5.5+, with Package Auto Discovery it should all be set automatically.
 
 **For Laravel < 5.5, follow these instructions after composer finishes package installation:**
 
-Add the service provider to the `'providers'` array in `config/app.php` for Laravel 5.4 and lower:
+Add the service provider to the **providers** array in `config/app.php` for Laravel 5.4 and lower:
 
 ```php
 SmartyStudio\SmartyCms\AdminServiceProvider::class,
@@ -60,7 +64,7 @@ $ php artisan smartycms:update
 
 Note that this installation uses migrations, so you must run it from machine that has access to your database.
 
-For instance, if you use Vagrant, you will have to do `vagrant ssh` first, go to your project directory, and run this install command. The same way you run your standard Laravel's migration command.
+For instance, if you use Vagrant/Homestead, you will have to do `vagrant ssh` first, go to your project directory, and run this install command. The same way you run your standard Laravel's migration command.
 
 ## Extends
 
@@ -153,7 +157,7 @@ $ npm run production
 
 If npm trow an error, then do this:
 
-First:
+1)
 
 ```
 $ rm -rf node_modules
@@ -162,16 +166,16 @@ $ npm cache clear --force
 $ npm cache clean --force
 ```
 
-Second: 
+2)
 
 ```
 $ npm install cross-env
 $ npm install 
 ```
 
-Third:
+3)
 
-`$ npm run dev` or `$ npm run prod` (prod is build for production environment).
+`$ npm run dev` or `$ npm run prod` ('prod' is build for production environment).
 
 
 

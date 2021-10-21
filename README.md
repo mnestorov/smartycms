@@ -116,7 +116,7 @@ $ cms update
 
 ## Documentation
 
-Visit [Wiki](https://github.com/smartystudio/smartycms/wiki/) for detailed usage documentation.
+Visit our [Wiki](https://github.com/smartystudio/smartycms/wiki/) for detailed usage documentation.
 
 ## Contributing
 
@@ -126,11 +126,15 @@ Contributions to the SmartyCMS library are welcome. Please note the following gu
 -   Write tests for new functions and added features
 -   use [Laravel Mix](https://laravel.com/docs/master/mix) for assets
 
+## Installing Laravel vendor packages
+
 **composer install**
 
 ```
 $ composer install
 ```
+
+## Compiling Assets (Mix)
 
 **npm install**
 
@@ -176,7 +180,6 @@ $ npm install
 3)
 
 `$ npm run dev` or `$ npm run prod` ('prod' is build for production environment).
-
 
 
 ## License

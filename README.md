@@ -1,4 +1,4 @@
-# SmartyCMS v1.2
+# SmartyCMS v1.3
 
 **Updated to work with Laravel 8 and PHP 8.0+**
 

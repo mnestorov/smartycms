@@ -1,6 +1,6 @@
-jQuery(function($) {
+$(function($) {
     // Delete confirmation
-	jQuery(function() {
+	$(function() {
 		$("a.delete, a.remove-item").on(function (e) {
 			e.preventDefault();
 			e.stopPropagation();
@@ -11,14 +11,14 @@ jQuery(function($) {
 	});
 
     // Delete confirmation AJAX
-	jQuery(function() {
+	$(function() {
 		$("body").on('button.delete', 'click', function (e) {
 			e.preventDefault();
 		});
 	});
 
     // CTRL + S to save in admin
-    jQuery(document).on(function (event) {
+    $(document).on(function (event) {
         if (!(String.fromCharCode(event.which).toLowerCase() === 's' && event.ctrlKey) && event.which !== 19)
             return true;
         $(".save").trigger("click");
@@ -26,28 +26,28 @@ jQuery(function($) {
         return false;
     });
 
-	jQuery(document).on(function () {
+	$(document).on(function () {
 		$('ul.account').on(function (e) {
 			e.stopPropagation();
 			$(this).find('.submenu-down').fadeToggle();
 		});
 	});
 
-	jQuery(document).on(function () {
+	$(document).on(function () {
 		$('body').on(function () {
 			$('ul.account').find('.submenu-down').fadeOut();
 		});
 	});
 
     // on change submit sort
-	jQuery(function() {
+	$(function() {
 		$('.sort-search-wrap .select-style').on(function () {
 			$(this).parent().on();
 		});
 	});
 
     // datapicker
-	jQuery(function() {
+	$(function() {
 		$('.datepicker').datepicker({
 			dateFormat: 'yy-mm-dd',
 			altField: '#date',
@@ -55,7 +55,7 @@ jQuery(function($) {
 		});
 	});
 
-	jQuery(function() {
+	$(function() {
 		$('.icon-menu').on(function () {
 			$(this).toggleClass('open');
 			$(this).parent().toggleClass('open');
@@ -64,13 +64,13 @@ jQuery(function($) {
 		});
 	});
 
-	jQuery(function() {
+	$(function() {
 		$('.input-box-wrap .button').on(function () {
 			$('.input-popup').fadeToggle();
 		});
 	});
 
-	jQuery(function() {
+	$(function() {
 		$(".upload").on(function () {
 			readImageFromInput(this);
 		});
@@ -80,7 +80,7 @@ jQuery(function($) {
 $(window).on("load", function () {
     hideAlert();
 
-	jQuery(function() {
+	$(function() {
 		$(".sortable").sortable({
 			stop: function (event, ui) {
 				var order = [];
@@ -110,7 +110,7 @@ $(window).on("load", function () {
 		});
 	});
 
-	jQuery(function() {
+	$(function() {
 		$('.copy').on(function () {
 			$(this).addClass('clicked');
 			setTimeout(function () {

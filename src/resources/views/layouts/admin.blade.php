@@ -2,13 +2,15 @@
 
 @section('styles')
 	@parent
-	<link rel="stylesheet" type="text/css" href="css/admin.css?v={{ File::lastModified(base_path('vendor/smartystudio/smartycms/src/resources/assets/dist/css/admin.css')) }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('vendor/smartycms/css/admin.css') }}">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 @append
 
 @section('scripts')
 	@parent
-	<script src="js/admin.js?v={{ File::lastModified(base_path('vendor/smartystudio/smartycms/src/resources/assets/dist/js/admin.js'))}}" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="{{ asset('vendor/smartycms/js/admin.js') }}" type="text/javascript"></script>
 	@yield('custom-script')
 @append
 

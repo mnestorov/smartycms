@@ -120,11 +120,14 @@
 				    <li class="nav-item">
                         <a class="nav-link scrollto" href="#i3-1">Instance</a>
                     </li>
-				    <li class="nav-item">
-                        <a class="nav-link scrollto" href="#i3-2">Elements</a>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i3-2">Menu</a>
                     </li>
 				    <li class="nav-item">
-                        <a class="nav-link scrollto" href="#i3-3">SEO Meta</a>
+                        <a class="nav-link scrollto" href="#i3-3">Elements</a>
+                    </li>
+				    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#i3-4">SEO Meta</a>
                     </li>
 				    <li class="nav-item section-title mt-3">
                         <a class="nav-link scrollto" href="#s4">
@@ -407,26 +410,59 @@
 				     <section class="docs-section" id="i3-1">
 						<h2 class="section-heading">Instance</h2>
 						<p>You could access SmartyCMS Page model instance with <code>Cms::page()</code>.</p>
-
 						<pre><code class="php7 hljs"><span>Cms::page();           /* this will return you appropriate Query Builder */</span><br><span>Cms::page($page);      /* this will return the Page Model, where `$page` can be page ID or page slug. */</span></code></pre>
 
-						<pre><code class="php7 hljs"><span>Cms::page()->menu();   /* generate nested menu from `Pages` */</span></code></pre>
+                        <br>
+						<p><b>Example 1:</b></p>
+                        <p><small><i>app/Http/Controllers/PageController.php</i></small></p>
+						<pre><code class="php7 hljs"><span>public function index()<br>{<br>    $pages = \SmartyStudio\SmartyCms\Models\Page::all();<br>    return view('pages.index', compact('pages'));    <br>}</span></code></pre>
 
-						<p>This will generate your HTML.</p>
+                        <p><small><i>resources/views/pages/index.blade.php</i></small></p>
+						<pre><code class="php7 hljs"><span>@foreach($pages as $page)<br>    /* using dynamic ID */<br>    {{ Cms::page($page['id'])->title }}<br>@endforeach</span></code></pre>
+
+                        <p><small><i>routes/web.php</i></small></p>
+                        <pre><code class="php7 hljs"><span>Route::get('/',[PageController::class, 'index']);<br>Route::get('/p/{id}/{slug?}',[PageController::class, 'show'])->name('p');</span></code></pre>
+
+                        <br>
+                        <p><b>Example 2:</b></p>
+                        <p><small><i>resources/views/pages/index.blade.php</i></small></p>
+						<pre><code class="php7 hljs"><span>/* using page slug as static ID */<br>{{ Cms::page('main-page')->title }}<br>{{ Cms::page('main-page')->description }}</span></code></pre>
+                    </section><!--//section-->
+
+                    <section class="docs-section" id="i3-2">
+						<h2 class="section-heading">Menu</h2>
+
+						<pre><code class="php7 hljs"><span>/* generate nested menu from `Pages` */<br>Cms::page()->menu();</span></code></pre>
+
+                        <p>This will generate your HTML.</p>
 
 						<p><b>You can style your menu like this:</b></p>
 
 						<pre><code class="css hljs"><span>.nav-list { <br>   li > ul { <br>      padding-left: 20px; <br>      padding-right: 20px; <br>   } <br>}</span></code></pre>
-						<pre><code class="php hljs"><span>Cms::page()->tree();  /* generates menu array from `Pages` */</span></code></pre>
-					</section><!--//section-->
+						<pre><code class="php hljs"><span>/* generates menu array from `Pages` */<br>Cms::page()->tree();</span></code></pre>
 
-					<section class="docs-section" id="i3-2">
-						<h2 class="section-heading">Elements</h2>
+                        <br>
+                        <p><b>Example 1:</b></p>
+                        <p><small><i>resources/views/_partials/header.blade.php</i></small></p>
+						<pre><code class="php7 hljs"><span>/* this is show nested page menu with parent pages and subpages */<br>{!! Cms::page()->menu() !!}</span></code></pre>
 
-						<pre><code class="php7 hljs"><span>Cms::page($page)->elements();    /* returns you all page elements as relationship `hasMany`. */</span><br><span>Cms::element($element_key);      /* returns PageElement Model */</span><br><span>echo Cms::element($element_key); /* returns content of the element, like Cms::element($element_key)->content */</span></code></pre>
-					</section><!--//section-->
+                        <br>
+                        <p><b>Example 2:</b></p>
+                        <p><small><i>resources/views/_partials/header.blade.php</i></small></p>
+						<pre><code class="php7 hljs"><span>/* this is show page menu only with the parent pages */<br>@foreach(Cms::page()->tree() as $page_menu)<br>    {{ $page_menu['title'] }}<br>@endforeach</span></code></pre>
+                    </section><!--//section-->
 
 					<section class="docs-section" id="i3-3">
+						<h2 class="section-heading">Elements</h2>
+						<pre><code class="php7 hljs"><span>Cms::page($page)->elements();    /* returns you all page elements as relationship `hasMany`. */</span><br><span>Cms::element($element_key);      /* returns PageElement Model */</span><br><span>echo Cms::element($element_key); /* returns content of the element, like Cms::element($element_key)->content */</span></code></pre>
+
+                        <br>
+                        <p><b>Example 1:</b></p>
+                        <p><small><i>resources/views/index.blade.php</i></small></p>
+						<pre><code class="php7 hljs"><span>/* this is show element for specific page */<br>{{ Cms::element('mp.mainelement')->title }}<br>{{ Cms::element('mp.mainelement')->content }}</span></code></pre>
+                    </section><!--//section-->
+
+					<section class="docs-section" id="i3-4">
 						<h2 class="section-heading">SEO Meta</h2>
 						<h3>Implementation</h3>
 						<p><code>getMeta()</code> returns array of meta keys and it can be sent directly to blade template. Use <code>$title</code>, <code>$description</code> and <code>$keywords</code> variables in your blade layouts.</p>

@@ -220,7 +220,7 @@
 		    <div class="container">
 			    <article class="docs-article" id="s1">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2021-10-21</span></h1>
+					    <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2021-10-28</span></h1>
 					    <section class="docs-intro">
 						    <p>SmartyCMS is a Laravel admin panel CRUD (create, read, update and delete) package that can help you get your administration panel in minutes.</p>
                             <p>The package is updated to work with <b>Laravel 8</b> and <b>PHP 8.0+</b></p>
@@ -414,42 +414,45 @@
 
                         <br>
 						<p><b>Example 1:</b></p>
+                        <p>First, we need to define <code>$pages</code> variable in to the PageController <code>index()</code> method.</p>
                         <p><small><i>app/Http/Controllers/PageController.php</i></small></p>
 						<pre><code class="php7 hljs"><span>public function index()<br>{<br>    $pages = \SmartyStudio\SmartyCms\Models\Page::all();<br>    return view('pages.index', compact('pages'));    <br>}</span></code></pre>
 
+                        <p>Second, we loop through all pages using dynamic ID.</p>
                         <p><small><i>resources/views/pages/index.blade.php</i></small></p>
-						<pre><code class="php7 hljs"><span>@foreach($pages as $page)<br>    /* using dynamic ID */<br>    {{ Cms::page($page['id'])->title }}<br>@endforeach</span></code></pre>
+						<pre><code class="php7 hljs"><span>@foreach($pages as $page)<br>    {{ Cms::page($page['id'])->title }}<br>@endforeach</span></code></pre>
 
+                        <p>Third, we need to define our page routes.</p>
                         <p><small><i>routes/web.php</i></small></p>
                         <pre><code class="php7 hljs"><span>Route::get('/',[PageController::class, 'index']);<br>Route::get('/p/{id}/{slug?}',[PageController::class, 'show'])->name('p');</span></code></pre>
 
                         <br>
                         <p><b>Example 2:</b></p>
+                        <p>Using page slug as static ID and get info for specific page.</p>
                         <p><small><i>resources/views/pages/index.blade.php</i></small></p>
-						<pre><code class="php7 hljs"><span>/* using page slug as static ID */<br>{{ Cms::page('main-page')->title }}<br>{{ Cms::page('main-page')->description }}</span></code></pre>
+						<pre><code class="php7 hljs"><span>{{ Cms::page('main-page')->title }}<br>{{ Cms::page('main-page')->description }}</span></code></pre>
                     </section><!--//section-->
 
                     <section class="docs-section" id="i3-2">
 						<h2 class="section-heading">Menu</h2>
-
-						<pre><code class="php7 hljs"><span>/* generate nested menu from `Pages` */<br>Cms::page()->menu();</span></code></pre>
-
-                        <p>This will generate your HTML.</p>
-
-						<p><b>You can style your menu like this:</b></p>
-
+                        <p>Generate nested menu from `Pages`.</p>
+						<pre><code class="php7 hljs"><span>Cms::page()->menu();</span></code></pre>
+                        <p>This will generate your HTML. You can style your menu like this:</p>
 						<pre><code class="css hljs"><span>.nav-list { <br>   li > ul { <br>      padding-left: 20px; <br>      padding-right: 20px; <br>   } <br>}</span></code></pre>
-						<pre><code class="php hljs"><span>/* generates menu array from `Pages` */<br>Cms::page()->tree();</span></code></pre>
+                        <p>Generates menu array from `Pages`.</p>
+						<pre><code class="php hljs"><span>Cms::page()->tree();</span></code></pre>
 
                         <br>
                         <p><b>Example 1:</b></p>
+                        <p>Show nested page menu with main (parent) pages and subpages.</p>
                         <p><small><i>resources/views/_partials/header.blade.php</i></small></p>
-						<pre><code class="php7 hljs"><span>/* this is show nested page menu with parent pages and subpages */<br>{!! Cms::page()->menu() !!}</span></code></pre>
+						<pre><code class="php7 hljs"><span>{!! Cms::page()->menu() !!}</span></code></pre>
 
                         <br>
                         <p><b>Example 2:</b></p>
+                        <p>Show page menu only with the main (parent) pages.</p>
                         <p><small><i>resources/views/_partials/header.blade.php</i></small></p>
-						<pre><code class="php7 hljs"><span>/* this is show page menu only with the parent pages */<br>@foreach(Cms::page()->tree() as $page_menu)<br>    {{ $page_menu['title'] }}<br>@endforeach</span></code></pre>
+						<pre><code class="php7 hljs"><span>@foreach(Cms::page()->tree() as $page_menu)<br>    {{ $page_menu['title'] }}<br>@endforeach</span></code></pre>
                     </section><!--//section-->
 
 					<section class="docs-section" id="i3-3">
@@ -458,8 +461,24 @@
 
                         <br>
                         <p><b>Example 1:</b></p>
+                        <p>Show element for specific page.</p>
                         <p><small><i>resources/views/index.blade.php</i></small></p>
-						<pre><code class="php7 hljs"><span>/* this is show element for specific page */<br>{{ Cms::element('mp.mainelement')->title }}<br>{{ Cms::element('mp.mainelement')->content }}</span></code></pre>
+						<pre><code class="php7 hljs"><span>{{ Cms::element('mp.mainelement')->title }}<br>{{ Cms::element('mp.mainelement')->content }}</span></code></pre>
+
+                        <br>
+                        <p><b>Example 2:</b></p>
+                        <p>First, we need to define <code>$pages</code> variable in to the PageController <code>index()</code> method.</p>
+                        <p><small><i>app/Http/Controllers/PageController.php</i></small></p>
+						<pre><code class="php7 hljs"><span>public function index()<br>{<br>    $pages = \SmartyStudio\SmartyCms\Models\Page::all();<br>    return view('pages.index', compact('pages'));    <br>}</span></code></pre>
+                        <p>Second, we loop through all page elements for all main pages.</p>
+                        <p><small><i>resources/views/index.blade.php</i></small></p>
+						<pre><code class="php7 hljs"><span>@foreach($pages as $page)<br>    @if(Cms::page($page)->elements())<br>        @foreach($page->elements as $element)<br>            {{ $element->title }}<br>        @endforeach<br>    @endif<br>@endforeach</span></code></pre>
+
+                        <br>
+                        <p><b>Example 3:</b></p>
+                        <p>Loop through all page elements for specific main (parent) page.</p>
+                        <p><small><i>resources/views/index.blade.php</i></small></p>
+						<pre><code class="php7 hljs"><span>@foreach($pages as $page)<br>    @if(Cms::page('main-page')->elements())<br>        @foreach($page->elements as $element)<br>            {{ $element->title }}<br>        @endforeach<br>    @endif<br>@endforeach</span></code></pre>
                     </section><!--//section-->
 
 					<section class="docs-section" id="i3-4">

@@ -374,9 +374,11 @@
 					<section class="docs-section" id="i2-2">
 						<h2 class="section-heading">Publish Assets</h2>
 						<p>Now, when your package's users execute the <code>vendor:publish</code> command, your assets will be copied to the specified publish location. Since you will typically need to overwrite the assets every time the package is updated, you may use the <code>--force</code> flag:</p>
-
-						<pre><code class="plaintext hljs"><span class="hljs-string">$ php artisan vendor:publish --tag=public --force</span></code></p>
-					</section><!--//section-->
+						<pre><code class="plaintext hljs"><span class="hljs-string">$ php artisan vendor:publish --tag=public --force</span></code></pre>
+						
+						<p>You may want to publish groups of package assets and resources separately. For instance, you might want to allow your users to publish your package's configuration files without being forced to publish your package's assets. You may do this by 'tagging' them when calling the publishes method from a package's service provider.</p>
+						<pre><code class="plaintext hljs"><span class="hljs-string">php artisan vendor:publish --tag=smartycms-config</span></code></pre>						   
+					 </section><!--//section-->				   							   
 
 					<section class="docs-section" id="i2-3">
 						<h2 class="section-heading">Compiling Assets (Mix)</h2>
